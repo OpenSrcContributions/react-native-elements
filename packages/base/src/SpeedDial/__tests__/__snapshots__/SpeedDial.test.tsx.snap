@@ -243,6 +243,7 @@ exports[`Speed Dial Component should match snapshot 1`] = `
                       >
                         <Text
                           allowFontScaling={false}
+                          selectable={false}
                           style={
                             [
                               {
@@ -444,6 +445,7 @@ exports[`Speed Dial Component should match snapshot 1`] = `
                       >
                         <Text
                           allowFontScaling={false}
+                          selectable={false}
                           style={
                             [
                               {
@@ -588,6 +590,7 @@ exports[`Speed Dial Component should match snapshot 1`] = `
                   >
                     <Text
                       allowFontScaling={false}
+                      selectable={false}
                       style={
                         [
                           {
