@@ -141,6 +141,8 @@ export interface SliderProps {
   animationConfig?:
     | Animated.TimingAnimationConfig
     | Animated.SpringAnimationConfig;
+    | Animated.TimingAnimationConfig
+    | Animated.SpringAnimationConfig;
 
   /** Apply style to the container of the slider.
    * @type Style

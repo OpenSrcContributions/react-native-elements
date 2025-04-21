@@ -83,6 +83,7 @@ export const TabBase: RneFunctionComponent<TabProps> = ({
   value = 0,
   scrollable = false,
   onChange = () => {},
+  onChange = () => {},
   indicatorStyle,
   disableIndicator,
   variant = 'default',
