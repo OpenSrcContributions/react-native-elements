@@ -55,11 +55,6 @@ export const BottomSheet: RneFunctionComponent<BottomSheetProps> = ({
       visible={isVisible}
       {...modalProps}
     >
-      <Pressable
-        onPress={onBackdropPress}
-        style={[StyleSheet.absoluteFill, backdropStyle]}
-        testID="RNE__Overlay__backdrop"
-      />
 
       <SafeAreaView
         style={StyleSheet.flatten([
@@ -69,7 +64,20 @@ export const BottomSheet: RneFunctionComponent<BottomSheetProps> = ({
         pointerEvents="box-none"
         {...rest}
       >
-        <View>
+        <AnimatedPressable
+          onPress={onBackdropPress}
+          style={[
+            StyleSheet.absoluteFill,
+            styles.backdrop,
+            backdropStyle,
+            { opacity: fadeValue },
+          ]}
+          testID="RNE__Overlay__backdrop"
+        />
+        <Animated.View
+          onLayout={onContentContainerLayout}
+          style={contentContainerStyle}
+        >
           <ScrollView {...scrollViewProps}>{children}</ScrollView>
         </View>
       </SafeAreaView>
