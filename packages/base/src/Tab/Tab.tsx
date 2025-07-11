@@ -2,6 +2,9 @@ import React from 'react';
 import {
   View,
   Animated,
+  Easing,
+  LayoutChangeEvent,
+  ScrollView,
   StyleProp,
   ViewStyle,
   ViewProps,
@@ -111,30 +114,20 @@ export const TabBase: RneFunctionComponent<TabProps> = ({
   const scrollHandler = React.useCallback(
     (currValue: number) => {
       if (tabItemPositions.current.length > currValue) {
-        let itemStartPosition =
-          currValue === 0
-            ? 0
-            : tabItemPositions.current[currValue - 1].position;
-        let itemEndPosition = tabItemPositions.current[currValue].position;
+        const tab = tabItemPositions.current[currValue];
+        const { position, width } = tab;
 
-        const scrollCurrentPosition = scrollViewPosition.current;
-        const tabContainerCurrentWidth = tabContainerWidth;
+        const scrollViewWidth = tabContainerWidth;
+        const tabCenter = position + width / 2;
+        let scrollX = tabCenter - scrollViewWidth / 2;
+        const maxScroll =
+          tabItemPositions.current.reduce((acc, item) => acc + item.width, 0) -
+          scrollViewWidth;
 
-        let scrollX = scrollCurrentPosition;
+        scrollX = Math.max(0, Math.min(scrollX, maxScroll));
 
-        if (itemStartPosition < scrollCurrentPosition) {
-          scrollX += itemStartPosition - scrollCurrentPosition;
-        } else if (
-          scrollCurrentPosition + tabContainerCurrentWidth <
-          itemEndPosition
-        ) {
-          scrollX +=
-            itemEndPosition -
-            (scrollCurrentPosition + tabContainerCurrentWidth);
-        }
-
-        scrollViewRef.current!.scrollTo({
-          x: scrollX,
+        scrollViewRef.current?.scrollTo({
+          x: currValue === 0 ? 0 : scrollX,
           y: 0,
           animated: true,
         });
@@ -211,13 +204,24 @@ export const TabBase: RneFunctionComponent<TabProps> = ({
                   onPress: () => onChange(index),
                   onLayout: (event: LayoutChangeEvent) => {
                     const { width } = event.nativeEvent.layout;
-                    const previousItemPosition =
-                      tabItemPositions.current[index - 1]?.position || 0;
-
                     tabItemPositions.current[index] = {
-                      position: previousItemPosition + width,
+                      position: 0,
                       width,
                     };
+                    if (
+                      tabItemPositions.current.filter(Boolean).length ===
+                      validChildren.length
+                    ) {
+                      let cumulativePosition = 0;
+                      for (let i = 0; i < validChildren.length; i++) {
+                        const item = tabItemPositions.current[i];
+                        if (!item) {
+                          continue;
+                        }
+                        item.position = cumulativePosition;
+                        cumulativePosition += item.width;
+                      }
+                    }
                   },
                   active: index === value,
                   variant,
