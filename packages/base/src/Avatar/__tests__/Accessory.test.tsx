@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar } from '..';
 import { renderWithWrapper } from '../../../.ci/testHelper';
+import { describe, it, expect, jest } from '@jest/globals';
 
 describe('Accessory Component', () => {
   jest.useFakeTimers();
