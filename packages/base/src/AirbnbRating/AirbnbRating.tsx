@@ -1,17 +1,10 @@
 import React from 'react';
-import {
-  AirbnbRating as TapRating,
-  TapRatingProps as RatingProps,
-} from 'react-native-ratings';
+// Assuming TapRating and SwipeRating are now available at the root level of 'react-native-ratings'
+import TapRating, { type TapRatingProps as RatingProps } from './TapRating';
 import { RneFunctionComponent } from '../helpers';
 
 export interface TapRatingProps extends RatingProps {}
 
-/** Ratings are used to collect measurable feedback from users.
- * Use Rating over an Input where imagery can increase user interaction.
- * This component is imported from [react-native-ratings](https://github.com/Monte9/react-native-ratings).
- * There are two types of rating - TapRating and SwipeRating.
- * This documentation is for Tap Rating version. */
 export const AirbnbRating: RneFunctionComponent<TapRatingProps> = (props) => {
   return <TapRating {...props} />;
 };
