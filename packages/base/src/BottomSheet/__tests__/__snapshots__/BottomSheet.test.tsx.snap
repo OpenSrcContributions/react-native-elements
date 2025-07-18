@@ -5,7 +5,7 @@ exports[`BottomSheet Component renders correctly 1`] = `
   testID="wrapper"
 >
   <Modal
-    animationType="slide"
+    animationType="none"
     hardwareAccelerated={false}
     onRequestClose={[Function]}
     transparent={true}
