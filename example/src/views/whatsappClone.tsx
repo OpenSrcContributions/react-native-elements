@@ -101,7 +101,7 @@ const WhatsappClone: React.FunctionComponent = () => {
                     <Text>John Doe</Text>
                   </ListItem.Title>
                   <View>
-                    <Text>I am using React Native vElements</Text>
+                    <Text>I am using React Native Elements</Text>
                   </View>
                 </ListItem.Content>
                 <Badge

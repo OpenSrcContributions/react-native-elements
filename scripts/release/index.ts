@@ -16,7 +16,7 @@ type TPkg = {
   manifestLocation: string;
 };
 
-const pkgScope = '@rn-vui';
+const pkgScope = '@rneui';
 
 class Release {
   static async bump(pkg: TPkg) {
@@ -28,10 +28,10 @@ class Release {
     //updating version in package.json file
     manifest.version = pkg.version;
 
-    //if package is themed, add @rn-vui/base as a devDependency and peerDependency and update its version
+    //if package is themed, add @rneui/base as a devDependency and peerDependency and update its version
     if (pkg.name === 'themed') {
-      manifest.devDependencies['@rn-vui/base'] = pkg.version;
-      manifest.peerDependencies['@rn-vui/base'] = pkg.version;
+      manifest.devDependencies['@rneui/base'] = pkg.version;
+      manifest.peerDependencies['@rneui/base'] = pkg.version;
     }
     if (pkg.name === 'base') {
       await this.updateWebsiteDocs(oldVersion, pkg.version);

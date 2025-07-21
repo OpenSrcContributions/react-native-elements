@@ -5,17 +5,17 @@ const config: Config = {
     doNotFake: ['nextTick'],
     timerLimit: 1000,
   },
-  displayName: '@rn-vui/themed',
+  displayName: '@rneui/themed',
   preset: 'react-native',
   testPathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/dist'],
   moduleNameMapper: {
-    '^@rn-vui/base/dist/(.*)': [
+    '^@rneui/base/dist/(.*)': [
       '<rootDir>/../base/src/$1',
-      '<rootDir>/../../node_modules/@rn-vui/base/src/$1',
+      '<rootDir>/../../node_modules/@rneui/base/src/$1',
     ],
   },
   transformIgnorePatterns: [
-    '<rootDir>/../../node_modules/(?!(@react-native|react-native|@rn-vui/base)/)',
+    '<rootDir>/../../node_modules/(?!(@react-native|react-native|@rneui/base)/)',
   ],
   coveragePathIgnorePatterns: [],
   setupFilesAfterEnv: ['<rootDir>/.ci/setupTests.ts'],

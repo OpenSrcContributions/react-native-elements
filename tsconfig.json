@@ -1,10 +1,10 @@
 {
-  "Display": "React Native vElements",
+  "Display": "React Native Elements",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@rn-vui/*": ["./packages/*/src"],
-      "@rn-vui/base/dist/*": ["./packages/base/src/*"]
+      "@rneui/*": ["./packages/*/src"],
+      "@rneui/base/dist/*": ["./packages/base/src/*"]
     },
     "removeComments": true,
     "composite": false, // Set composite to false
