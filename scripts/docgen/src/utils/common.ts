@@ -71,7 +71,7 @@ export const tabify = (str: string) => {
                       }),
                     ]
                   );
-                  path.posix.replaceWith(element);
+                  path.replaceWith(element);
                 }
               }
             },
