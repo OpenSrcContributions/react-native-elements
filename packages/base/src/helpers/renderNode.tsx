@@ -1,7 +1,7 @@
 import React from 'react';
 
 const renderNode = (Component: any, content: any, defaultProps: any = {}) => {
-  const { key, ...remainingDefaultProps } = defaultProps;
+  const { key, ...remainingDefaultProps } = defaultProps; //Issue Fix: Warning about a prop is spread containing key prop upstream#3956
   if (content == null || content === false) {
     return null;
   }
