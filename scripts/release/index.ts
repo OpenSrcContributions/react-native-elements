@@ -66,8 +66,8 @@ class Release {
     //update website docs
     // if version bump is patch then update the version
     // is version bump is minor or major then create new version on website
-
-    if (semver.diff(oldVersion, newVersion) === 'patch' || semver.diff(oldVersion, newVersion) === 'minor') {
+    const semverVersionDifference = semver.diff(oldVersion, newVersion);
+    if (semverVersionDifference === 'patch' || semverVersionDifference === 'minor') {
       //need to rename website/versioned_docs/version-${oldVersion} to website/versioned_docs/version-${newVersion}
       const oldVersionPath = path.resolve(
         websiteRootPath,
