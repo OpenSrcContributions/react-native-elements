@@ -18,22 +18,32 @@ jobs:
         with:
           result-encoding: string
           script: |
-            const { owner, repo,  } = context.issue;
+            const { owner, repo } = context.issue;
             const pr = await github.pulls.get({
               owner,
               repo,
               pull_number: ${{github.event.inputs.pr}},
             });
             return pr.data.head.sha
-      - uses: actions/checkout@v2
+
+      - uses: actions/checkout@v3 # Updated to v3 for the latest checkout improvements
         with:
           ref: ${{ steps.sha.outputs.result }}
+
+      - name: Enable Corepack
+        run: corepack enable
+        shell: bash
+
+      - name: Enable Yarn with Corepack
+        run: corepack prepare yarn@stable --activate
+        shell: bash
 
       - name: Install dependencies
         uses: ./.github/actions/install
 
       - name: Build packages
         run: yarn build
+
       - name: Config git
         run: |
           git config --local user.email "104670806+rneui@users.noreply.github.com"
@@ -47,10 +57,14 @@ jobs:
           git add .
           git commit -m "Bleeding Edge Version" -a --no-verify
 
+      - name: Deploy Bleeding Edge version '@rneui/*' packages
+        run: |
           for pkg in $(find ./packages -mindepth 1 -maxdepth 1 -type d -printf '%f\n'); do
                echo "Deploying @rneui/$pkg"
-               git push origin `git subtree split --prefix packages/$pkg -b $pkg`:refs/heads/$pkg-${{ github.event.inputs.pr }} --force
+               git subtree split --prefix packages/$pkg -b $pkg-${{ github.event.inputs.pr }} || exit 1  # Added error handling
+               git push origin $pkg-${{ github.event.inputs.pr }}:refs/heads/$pkg-${{ github.event.inputs.pr }} --force
           done
+
       - name: Message success
         if: ${{ success() }}
         uses: actions/github-script@v4
@@ -63,6 +77,7 @@ jobs:
               repo: context.repo.repo,
               body: 'Hey, @${{github.actor}} PR Preview Build succeeded! ✅\n \n Install using \n```bash\n npm i ${{github.repository}}#base-${{ github.event.inputs.pr }} ${{github.repository}}#themed-${{ github.event.inputs.pr }}\n```',
             });
+
       - name: Message failure
         if: ${{ failure() }}
         uses: actions/github-script@v4
