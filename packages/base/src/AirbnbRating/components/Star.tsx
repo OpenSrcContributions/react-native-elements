@@ -33,7 +33,6 @@ const Star: React.FunctionComponent<StarProps> = ({
   position = 1,
   starSelectedInPosition = () => {},
 }) => {
-  const [selected, setSelected] = useState<boolean>(false);
   const springValue = new Animated.Value(1);
 
   const spring = () => {
