@@ -16,8 +16,6 @@ import Play from "@site/playground/BottomSheet/bottomsheet.playground";
 Overlay Modal that displays content from the bottom of the screen.
 This opens from the bottom of the screen.
 
-## Usage
-
 <div class="row inline-flex-center">
   <div class="col col--3">
     <h4>Import</h4>
@@ -38,20 +36,25 @@ This opens from the bottom of the screen.
   </div>
 </div>
 
+## Usage
+
 <Usage />
 
 ## Props
 
 <div class='table-responsive'>
 
-| Name              | Type            | Default    | Description                                                                          |
-| ----------------- | --------------- | ---------- | ------------------------------------------------------------------------------------ |
-| `backdropStyle`   | View Style      |            | Style of the backdrop container.                                                     |
-| `containerStyle`  | View Style      |            | Style of the bottom sheet's container. Use this to change the color of the underlay. |
-| `isVisible`       | boolean         | `false`    | Is the modal component shown.                                                        |
-| `modalProps`      | ModalProps      | `{}`       | Additional props handed to the `Modal`.                                              |
-| `onBackdropPress` | Function        | `Function` | Handler for backdrop press.                                                          |
-| `scrollViewProps` | ScrollViewProps | `{}`       | Used to add props to Scroll view.                                                    |
+| Name                | Type                        | Default               | Description                                                                          |
+| ------------------- | --------------------------- | --------------------- | ------------------------------------------------------------------------------------ |
+| `animationDuration` | number                      | `300`                 | Duration of backdrop fade and sheet translate.                                       |
+| `animationType`     | `none` \| `slide` \| `fade` | `slide`               | Animation type.                                                                      |
+| `backdropStyle`     | View Style                  |                       | Style of the backdrop container.                                                     |
+| `containerStyle`    | View Style                  |                       | Style of the bottom sheet's container. Use this to change the color of the underlay. |
+| `easing`            | (value: number) => number   | `Easing.elastic(0.7)` | Easing config.                                                                       |
+| `isVisible`         | boolean                     | `false`               | Is the modal component shown.                                                        |
+| `modalProps`        | ModalProps                  | `{}`                  | Additional props handed to the `Modal`.                                              |
+| `onBackdropPress`   | Function                    | `Function`            | Handler for backdrop press.                                                          |
+| `scrollViewProps`   | ScrollViewProps             | `{}`                  | Used to add props to Scroll view.                                                    |
 
 </div>
 
