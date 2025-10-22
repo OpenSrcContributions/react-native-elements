@@ -45,8 +45,6 @@ const Star: React.FunctionComponent<StarProps> = ({
       useNativeDriver: true,
     }).start();
 
-    setSelected(!selected);
-
     starSelectedInPosition(position);
   };
 
