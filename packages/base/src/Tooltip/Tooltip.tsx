@@ -11,6 +11,7 @@ import {
   Platform,
   Dimensions,
   Pressable,
+  FlexStyle,
 } from 'react-native';
 import Triangle from './components/Triangle';
 import { ScreenWidth, isIOS, RneFunctionComponent } from '../helpers';
@@ -172,10 +173,10 @@ export const Tooltip: RneFunctionComponent<TooltipProps> = ({
   }, [getElementPosition, onClose, onOpen, toggleOnPress, visible]);
 
   const Pointer: React.FC<{
-    tooltipY: number | string;
+    tooltipY: FlexStyle['top'];
   }> = ({ tooltipY }) => {
     const { yOffset, xOffset, elementHeight, elementWidth } = dimensions;
-    const pastMiddleLine = yOffset > (tooltipY || 0);
+    const pastMiddleLine = yOffset > ((tooltipY as number) || 0);
     if (!withPointer) {
       return null;
     }
@@ -249,12 +250,16 @@ export const Tooltip: RneFunctionComponent<TooltipProps> = ({
 
     return () => {
       isMounted.current = false;
-      if (dimensionsListener?.remove) {
+      if (Platform.constants.reactNativeVersion?.minor >= 65) {
         // react-native >= 0.65.*
         dimensionsListener.remove();
-      } else {
+        //@ts-ignore
+      } else if (__DEV__) {
         // react-native < 0.65.*
-        Dimensions.removeEventListener('change', getElementPosition);
+        // Dimensions.removeEventListener('change', getElementPosition);
+        console.warn(
+          'Deprecated API: React native < 0.65.* are no longer supported please use @rneui/base@^4.0.0-rc8 instead.'
+        );
       }
     };
   }, [getElementPosition]);

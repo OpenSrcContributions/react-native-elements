@@ -3,6 +3,7 @@ import { Text } from 'react-native';
 import { renderWithWrapper } from '../../../.ci/testHelper';
 import { CreateThemeOptions, FullTheme } from '../../config';
 import Overlay from '../index';
+import { describe, it, expect } from '@jest/globals';
 
 describe('Overlay', () => {
   it('should apply values from theme', () => {

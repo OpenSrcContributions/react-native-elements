@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from '../index';
 import { renderWithWrapper } from '../../../.ci/testHelper';
+import { describe, it, expect } from '@jest/globals';
 
 describe('SearchBar wrapper component', () => {
   it('should apply values from theme', () => {

@@ -4,6 +4,7 @@ import { Pressable, View, Image, Text } from 'react-native';
 import { renderWithWrapper } from '../../../.ci/testHelper';
 import { avatarSizes } from './../Avatar';
 import { Icon } from '../../Icon';
+import { describe, it, expect, jest } from '@jest/globals';
 
 describe('Avatar Component', () => {
   jest.useFakeTimers();

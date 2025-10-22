@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from '../index';
 import { Button, ImageBackground, StatusBar, View } from 'react-native';
 import { renderWithWrapper } from '../../../.ci/testHelper';
+import { describe, it, expect } from '@jest/globals';
 
 const btnCfg = { icon: 'home' };
 const titleCfg = { text: 'This is a title' };

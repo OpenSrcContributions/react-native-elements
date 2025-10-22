@@ -41,7 +41,7 @@ const WhatsappClone: React.FunctionComponent = () => {
           </Text>
           <Icon name="search" color="white" style={styles.icon} />
           <Icon
-            name="md-ellipsis-vertical"
+            name="ellipsis-vertical"
             style={styles.icon}
             type="ionicon"
             color="white"
@@ -90,7 +90,7 @@ const WhatsappClone: React.FunctionComponent = () => {
         <View style={styles.view}>
           <ScrollView nestedScrollEnabled scrollEventThrottle={16}>
             {[...new Array(15)].map((v, i) => (
-              <ListItem key={i} bottomDivider onPress={() => {}}>
+              <ListItem key={i} bottomDivider onPress={() => { }}>
                 <Avatar
                   rounded
                   size={40}
@@ -115,7 +115,7 @@ const WhatsappClone: React.FunctionComponent = () => {
           </ScrollView>
         </View>
         <View style={styles.view}>
-          <ListItem bottomDivider onPress={() => {}}>
+          <ListItem bottomDivider onPress={() => { }}>
             <Avatar
               rounded
               size={40}
@@ -139,7 +139,7 @@ const WhatsappClone: React.FunctionComponent = () => {
         </View>
         <View style={styles.view}>
           {[...new Array(3)].map((v, i) => (
-            <ListItem key={i} bottomDivider onPress={() => {}}>
+            <ListItem key={i} bottomDivider onPress={() => { }}>
               <Avatar
                 rounded
                 size={40}

@@ -15,8 +15,6 @@ import Play from "@site/playground/ListItem/listitem.playground";
 
 ListItems are used to display rows of information, such as a contact list, playlist, or menu. They are very customizable and can contain switches, avatars, badges, icons, and more.
 
-## Usage
-
 <div class="row inline-flex-center">
   <div class="col col--3">
     <h4>Import</h4>
@@ -36,6 +34,8 @@ ListItems are used to display rows of information, such as a contact list, playl
     <CodeBlock>{`ListItem`}</CodeBlock>
   </div>
 </div>
+
+## Usage
 
 ### Default
 
@@ -140,7 +140,7 @@ ListItems are used to display rows of information, such as a contact list, playl
 Use as a collapsible list item refer props for [ListItem.Accordion](./listItem_accordion#props)
 
 ```tsx live
-function RNEListItemAccordion() {
+{
   const [expanded, setExpanded] = React.useState(false);
   return (
     <>
@@ -237,43 +237,43 @@ Try swiping list item, refer props for [ListItem.Swipeable](./listItem_swipeable
 Refer props for [ListItem.CheckBox](./listItem_checkbox#props)
 
 ```tsx live
-function () {
-     const [checked, setChecked] = React.useState([false, false]);
-     return (
-       <>
-         <ListItem bottomDivider>
-           <ListItem.CheckBox
-             // Use ThemeProvider to change the defaults of the checkbox
-             iconType="material-community"
-             checkedIcon="checkbox-marked"
-             uncheckedIcon="checkbox-blank-outline"
-             checked={checked[0]}
-             onPress={() => setChecked([!checked[0], checked[1]])}
-           />
-           <ListItem.Content>
-             <ListItem.Title>User 1</ListItem.Title>
-             <ListItem.Subtitle>CA, US</ListItem.Subtitle>
-           </ListItem.Content>
-           <ListItem.Chevron />
-         </ListItem>
-         <ListItem bottomDivider>
-           <ListItem.CheckBox
-             // Use ThemeProvider to change the defaults of the checkbox
-             iconType="material-community"
-             checkedIcon="checkbox-marked"
-             uncheckedIcon="checkbox-blank-outline"
-             checked={checked[1]}
-             onPress={() => setChecked([checked[0], !checked[1]])}
-           />
-           <ListItem.Content>
-             <ListItem.Title>User 2</ListItem.Title>
-             <ListItem.Subtitle>HR, India</ListItem.Subtitle>
-           </ListItem.Content>
-           <ListItem.Chevron />
-         </ListItem>
-       </>
-     );
-   }
+{
+  const [checked, setChecked] = React.useState([false, false]);
+  return (
+    <>
+      <ListItem bottomDivider>
+        <ListItem.CheckBox
+          // Use ThemeProvider to change the defaults of the checkbox
+          iconType="material-community"
+          checkedIcon="checkbox-marked"
+          uncheckedIcon="checkbox-blank-outline"
+          checked={checked[0]}
+          onPress={() => setChecked([!checked[0], checked[1]])}
+        />
+        <ListItem.Content>
+          <ListItem.Title>User 1</ListItem.Title>
+          <ListItem.Subtitle>CA, US</ListItem.Subtitle>
+        </ListItem.Content>
+        <ListItem.Chevron />
+      </ListItem>
+      <ListItem bottomDivider>
+        <ListItem.CheckBox
+          // Use ThemeProvider to change the defaults of the checkbox
+          iconType="material-community"
+          checkedIcon="checkbox-marked"
+          uncheckedIcon="checkbox-blank-outline"
+          checked={checked[1]}
+          onPress={() => setChecked([checked[0], !checked[1]])}
+        />
+        <ListItem.Content>
+          <ListItem.Title>User 2</ListItem.Title>
+          <ListItem.Subtitle>HR, India</ListItem.Subtitle>
+        </ListItem.Content>
+        <ListItem.Chevron />
+      </ListItem>
+    </>
+  );
+}
 ```
 
 <Usage />

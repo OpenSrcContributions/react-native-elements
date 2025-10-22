@@ -16,8 +16,6 @@ import Play from "@site/playground/Tile/tile.playground";
 Tiles like Cards, are a convenient way to display related content about a single subject.
 Also receives all [TouchableNativeFeedback](http://reactnative.dev/docs/touchablenativefeedback.html#props) (Android) or [TouchableOpacity](http://reactnative.dev/docs/touchableopacity.html#props) (iOS) props.
 
-## Usage
-
 <div class="row inline-flex-center">
   <div class="col col--3">
     <h4>Import</h4>
@@ -38,6 +36,8 @@ Also receives all [TouchableNativeFeedback](http://reactnative.dev/docs/touchabl
   </div>
 </div>
 
+## Usage
+
 <Usage />
 
 ## Props
@@ -54,6 +54,7 @@ Includes all [View](https://reactnative.dev/docs/view#props) props.
 | `activeOpacity`         | number                            |                  | Number passed to control opacity on press.                                      |
 | `caption`               | ReactNode                         |                  | Text inside the tilt when tile is featured.                                     |
 | `captionStyle`          | Text Style                        |                  | Styling for the caption (optional); You only use this if `caption` is a string. |
+| `children`              | ReactNode                         |                  | Children                                                                        |
 | `containerStyle`        | View Style                        |                  | Styling for the outer tile container.                                           |
 | `contentContainerStyle` | View Style                        |                  | Styling for bottom container when not featured tile.                            |
 | `featured`              | boolean                           |                  | Changes the look of the tile.                                                   |
