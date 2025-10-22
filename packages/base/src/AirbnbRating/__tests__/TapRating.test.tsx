@@ -1,6 +1,5 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
-import '@testing-library/jest-native/extend-expect';
 import TapRating from '../TapRating';
 
 describe('TapRating Aka AirbnbRating', () => {
@@ -17,7 +16,7 @@ describe('TapRating Aka AirbnbRating', () => {
   it('show rating true should show rating', () => {
     const { getByTestId } = render(<TapRating showRating={true} />);
     const ratingText = getByTestId('RNVUI__TapRating-showRating');
-    expect(ratingText).toBeTruthy();
+    expect(ratingText).toBeOnTheScreen();
   });
 
   it('number of stars should match count prop', () => {
@@ -34,8 +33,8 @@ describe('TapRating Aka AirbnbRating', () => {
       <TapRating reviews={ratingReviews} defaultRating={defaultRating} />
     );
     const ratingText = getByTestId('RNVUI__TapRating-showRating');
-    expect(ratingText).toBeTruthy();
-    expect(ratingText.props.children).toBe(
+    expect(ratingText).toBeOnTheScreen();
+    expect(ratingText).toHaveTextContent(
       ratingReviews[defaultRating - 1] || ''
     );
   });

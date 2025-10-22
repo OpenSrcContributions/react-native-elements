@@ -1,7 +1,8 @@
+import React from 'react';
+
 describe('index', () => {
-  it('should export Rating and AirbnbRating', () => {
-    const { Rating, AirbnbRating } = require('../index');
-    expect(Rating).toBeDefined();
+  it('should export AirbnbRating', () => {
+    const { AirbnbRating } = require('../index');
     expect(AirbnbRating).toBeDefined();
   });
 });
