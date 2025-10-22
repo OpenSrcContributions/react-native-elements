@@ -8,6 +8,8 @@ import { renderWithWrapper } from '../../../.ci/testHelper';
 import Button, { Button as BaseButton } from '../../Button';
 import Text from '../../Text';
 import { defaultSpacing } from '../theme';
+
+import { describe, it, expect } from '@jest/globals';
 import {
   createTheme,
   ThemeConsumer,

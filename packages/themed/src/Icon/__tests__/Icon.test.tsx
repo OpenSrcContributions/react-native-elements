@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from '../index';
 import { renderWithWrapper } from '../../../.ci/testHelper';
+import { describe, it, expect } from '@jest/globals';
 
 describe('Icon component', () => {
   it('should apply values from theme', () => {

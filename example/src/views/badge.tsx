@@ -5,7 +5,7 @@ import { Header, SubHeader } from '../components/header';
 
 const BadgedIcon = withBadge(15)(Icon);
 
-const badgeComponent = () => {
+const BadgeComponent = () => {
   return (
     <>
       <Header title="Badge" view="badge" />
@@ -72,7 +72,7 @@ const badgeComponent = () => {
             />
           </View>
           {/* @ts-ignore */}
-          <BadgedIcon type="ionicon" name="ios-chatbubbles" />
+          <BadgedIcon type="ionicon" name="chatbubble-ellipses" />
           <View>
             <Avatar
               rounded
@@ -93,4 +93,4 @@ const badgeComponent = () => {
   );
 };
 
-export default badgeComponent;
+export default BadgeComponent;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Chip from '../index';
 import { renderWithWrapper } from '../../../.ci/testHelper';
+import { describe, expect } from '@jest/globals';
 
 describe('Chip Component', () => {
   it.each`
