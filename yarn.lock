@@ -4398,6 +4398,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-vector-icons/ant-design@npm:^12.3.0":
+  version: 12.4.0
+  resolution: "@react-native-vector-icons/ant-design@npm:12.4.0"
+  dependencies:
+    "@react-native-vector-icons/common": "npm:^12.4.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10/92d2256b92958ae15150f1785993f322186cf770b2dc285e022e826122ac8881378616269f99acaab94647f06b5d7badb410f2e363e5f0d88ee40fbaf66131ed
+  languageName: node
+  linkType: hard
+
 "@react-native-vector-icons/common@npm:^12.3.0":
   version: 12.3.0
   resolution: "@react-native-vector-icons/common@npm:12.3.0"
@@ -4418,6 +4430,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-vector-icons/common@npm:^12.4.0":
+  version: 12.4.0
+  resolution: "@react-native-vector-icons/common@npm:12.4.0"
+  dependencies:
+    find-up: "npm:^7.0.0"
+    picocolors: "npm:^1.1.1"
+    plist: "npm:^3.1.0"
+  peerDependencies:
+    "@react-native-vector-icons/get-image": ^12.3.0
+    react: "*"
+    react-native: "*"
+  peerDependenciesMeta:
+    "@react-native-vector-icons/get-image":
+      optional: true
+  bin:
+    rnvi-update-plist: lib/commonjs/scripts/updatePlist.js
+  checksum: 10/9c59a8c21f98106621320f77b89e9ea11a2d59d70d61576742ffb65e7426537d3b218de46dd997c63422ff37347d44513e64d3305625423a21ec9a21581c8d94
+  languageName: node
+  linkType: hard
+
 "@react-native-vector-icons/fontawesome@npm:^12.3.0":
   version: 12.3.0
   resolution: "@react-native-vector-icons/fontawesome@npm:12.3.0"
@@ -4427,6 +4459,30 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10/5447fe8bc05333d508137d5b8df36fd9fab55784b013dac3802ef20964e0719513145d4d5dde3a183dc0b1866f3488bd4119c77f6c950a3bfe7fec0baf994e10
+  languageName: node
+  linkType: hard
+
+"@react-native-vector-icons/ionicons@npm:^12.3.0":
+  version: 12.3.0
+  resolution: "@react-native-vector-icons/ionicons@npm:12.3.0"
+  dependencies:
+    "@react-native-vector-icons/common": "npm:^12.3.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10/da342a72ef599de1d897e8fe1acee50d58b95c7c253fd26f4a831fd5488d2826a636fb259e8b5970ab45e9e85790cffd3552837a025b0f2310f571f71effcbeb
+  languageName: node
+  linkType: hard
+
+"@react-native-vector-icons/material-design-icons@npm:^12.3.0":
+  version: 12.4.0
+  resolution: "@react-native-vector-icons/material-design-icons@npm:12.4.0"
+  dependencies:
+    "@react-native-vector-icons/common": "npm:^12.4.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10/15227f2acab0367cad5315248bd8444a3aaa8a620a7ce96649abd5667f57a781aaa442753d6841791cd07b51ae41ec7c0118eae8ebc0444584702c8b0e06c882
   languageName: node
   linkType: hard
 
@@ -17216,7 +17272,10 @@ __metadata:
   dependencies:
     "@expo/metro-runtime": "npm:~6.1.2"
     "@expo/webpack-config": "npm:^19.0.0"
+    "@react-native-vector-icons/ant-design": "npm:^12.3.0"
     "@react-native-vector-icons/fontawesome": "npm:^12.3.0"
+    "@react-native-vector-icons/ionicons": "npm:^12.3.0"
+    "@react-native-vector-icons/material-design-icons": "npm:^12.3.0"
     "@react-native-vector-icons/material-icons": "npm:^12.3.0"
     "@react-navigation/bottom-tabs": "npm:^7.4.0"
     "@react-navigation/drawer": "npm:^7.5.8"
