@@ -85,6 +85,83 @@ export interface TooltipProps {
   animationType?: 'fade' | 'none';
 }
 
+interface PointerProps {
+  tooltipY: FlexStyle['top'];
+  dimensions: {
+    yOffset: number;
+    xOffset: number;
+    elementWidth: number;
+    elementHeight: number;
+  };
+  withPointer: boolean;
+  pointerColor: ColorValue;
+  pointerStyle?: StyleProp<ViewStyle>;
+}
+
+const Pointer: React.FC<PointerProps> = ({
+  tooltipY,
+  dimensions,
+  withPointer,
+  pointerColor,
+  pointerStyle,
+}) => {
+  const { yOffset, xOffset, elementHeight, elementWidth } = dimensions;
+  const pastMiddleLine = yOffset > ((tooltipY as number) || 0);
+  if (!withPointer) {
+    return null;
+  }
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        top: pastMiddleLine ? yOffset - 13 : yOffset + elementHeight - 2,
+        [I18nManager.isRTL ? 'right' : 'left']:
+          xOffset +
+          getElementVisibleWidth(elementWidth, xOffset, ScreenWidth) / 2 -
+          7.5,
+      }}
+    >
+      <Triangle
+        style={pointerStyle}
+        pointerColor={pointerColor}
+        isDown={pastMiddleLine}
+      />
+    </View>
+  );
+};
+
+interface HighlightedButtonProps {
+  closeOnlyOnBackdropPress: boolean;
+  onPress: () => void;
+  style: ViewStyle;
+  children: React.ReactNode;
+}
+
+const HighlightedButton: React.FC<HighlightedButtonProps> = ({
+  closeOnlyOnBackdropPress,
+  onPress,
+  style,
+  children,
+}) => {
+  if (!closeOnlyOnBackdropPress) {
+    return (
+      <Pressable
+        testID="tooltipTouchableHighlightedButton"
+        onPress={onPress}
+        style={style}
+      >
+        {children}
+      </Pressable>
+    );
+  } else {
+    return (
+      <View testID="tooltipTouchableHighlightedButton" style={style}>
+        {children}
+      </View>
+    );
+  }
+};
+
 /** Tooltips display informative text when users tap on an element.
  * @usage
  * ### Example
@@ -172,34 +249,6 @@ export const Tooltip: RneFunctionComponent<TooltipProps> = ({
     isMounted.current && toggleOnPress && (visible ? onClose?.() : onOpen?.());
   }, [getElementPosition, onClose, onOpen, toggleOnPress, visible]);
 
-  const Pointer: React.FC<{
-    tooltipY: FlexStyle['top'];
-  }> = ({ tooltipY }) => {
-    const { yOffset, xOffset, elementHeight, elementWidth } = dimensions;
-    const pastMiddleLine = yOffset > ((tooltipY as number) || 0);
-    if (!withPointer) {
-      return null;
-    }
-    return (
-      <View
-        style={{
-          position: 'absolute',
-          top: pastMiddleLine ? yOffset - 13 : yOffset + elementHeight - 2,
-          [I18nManager.isRTL ? 'right' : 'left']:
-            xOffset +
-            getElementVisibleWidth(elementWidth, xOffset, ScreenWidth) / 2 -
-            7.5,
-        }}
-      >
-        <Triangle
-          style={pointerStyle}
-          pointerColor={pointerColor}
-          isDown={pastMiddleLine}
-        />
-      </View>
-    );
-  };
-
   const TooltipHighlightedButtonStyle = React.useMemo<ViewStyle>(() => {
     const { yOffset, xOffset, elementWidth, elementHeight } = dimensions;
     return {
@@ -212,29 +261,6 @@ export const Tooltip: RneFunctionComponent<TooltipProps> = ({
       height: elementHeight,
     };
   }, [dimensions, highlightColor]);
-
-  const HighlightedButton: React.FC = () => {
-    if (!closeOnlyOnBackdropPress) {
-      return (
-        <Pressable
-          testID="tooltipTouchableHighlightedButton"
-          onPress={handleOnPress}
-          style={TooltipHighlightedButtonStyle}
-        >
-          {props.children}
-        </Pressable>
-      );
-    } else {
-      return (
-        <View
-          testID="tooltipTouchableHighlightedButton"
-          style={TooltipHighlightedButtonStyle}
-        >
-          {props.children}
-        </View>
-      );
-    }
-  };
 
   /**
    * Listen for change in layout, i.e. Portrait or Landscape
@@ -300,8 +326,20 @@ export const Tooltip: RneFunctionComponent<TooltipProps> = ({
           activeOpacity={1}
         >
           <View>
-            <HighlightedButton />
-            <Pointer tooltipY={tooltipStyle.top} />
+            <HighlightedButton
+              closeOnlyOnBackdropPress={closeOnlyOnBackdropPress}
+              onPress={handleOnPress}
+              style={TooltipHighlightedButtonStyle}
+            >
+              {props.children}
+            </HighlightedButton>
+            <Pointer
+              tooltipY={tooltipStyle.top}
+              dimensions={dimensions}
+              withPointer={withPointer}
+              pointerColor={pointerColor}
+              pointerStyle={pointerStyle}
+            />
             <View style={tooltipStyle} testID="tooltipPopoverContainer">
               {props.popover}
             </View>
