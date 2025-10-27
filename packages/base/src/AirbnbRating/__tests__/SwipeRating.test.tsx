@@ -33,17 +33,17 @@ describe('SwipeRating', () => {
     });
   });
 
-  // it('should render with custom image', () => {
-  //   const customImage = require('../images/bell.png');
-  //   const { getAllByTestId } = render(
-  //     <SwipeRating type="custom" ratingImage={customImage} />
-  //   );
-  //   const swipeRatings = getAllByTestId('RNVUI__Star-image');
+  it('should render with custom image', () => {
+    const customImage = require('../images/bell.png');
+    const { getAllByTestId } = render(
+      <SwipeRating type="custom" ratingImage={customImage} />
+    );
+    const swipeRatings = getAllByTestId('RNVUI__Star-image');
 
-  //   swipeRatings.forEach((swipeRating) => {
-  //     expect(swipeRating.props.source).toEqual(customImage); // Check if the image source is the custom image
-  //   });
-  // });
+    swipeRatings.forEach((swipeRating) => {
+      expect(swipeRating.props.source).toEqual(customImage); // Check if the image source is the custom image
+    });
+  });
 
   it('should render with custom star color', () => {
     const customStarColor = 'red';
