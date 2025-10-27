@@ -46,11 +46,12 @@ const TYPES: {
     color: '#f39c12',
     backgroundColor: 'white',
   },
-  custom: {
-    source: STAR_IMAGE,
-    color: '#f1c40f',
-    backgroundColor: 'white',
-  },
+  // Remove hardcoded custom type fallback for now
+  //custom: {
+  //  source: STAR_IMAGE,
+  //  color: '#f1c40f',
+  //  backgroundColor: 'white',
+  //},
 };
 
 //@ts-ignore
@@ -402,7 +403,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   };
 
   const renderRatings = React.useMemo(() => {
-    const source = TYPES[type]?.source;
+    const source = type === 'custom' ? ratingImage : TYPES[type]?.source;
     return Array.from({ length: ratingCount }, (_, index) => (
       <View key={index} style={styles.starsWrapper} testID="RNVUI__Star">
         <Image
@@ -416,7 +417,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
         />
       </View>
     ));
-  }, [ratingCount, imageSize, ratingColor, type]);
+  }, [ratingCount, imageSize, ratingColor, type, ratingImage]);
 
   return (
     <View
