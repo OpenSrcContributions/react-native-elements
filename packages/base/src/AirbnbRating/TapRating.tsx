@@ -144,11 +144,11 @@ const TapRating: React.FunctionComponent<TapRatingProps> = ({
     return rating_array.map((star) => star);
   };
 
-  const starSelectedInPosition = (position: number) => {
+  const starSelectedInPosition = (selectedPosition: number) => {
     if (typeof onFinishRating === 'function') {
-      onFinishRating(position);
+      onFinishRating(selectedPosition);
     }
-    setPosition(position);
+    setPosition(selectedPosition);
   };
 
   const rating_array = [];
