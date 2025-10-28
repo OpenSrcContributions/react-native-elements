@@ -201,7 +201,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   ratingImage = STAR_IMAGE,
   ratingColor,
   ratingBackgroundColor = 'white',
-  ratingTextColor = TYPES[type]?.color,
+  ratingTextColor,
   ratingCount = 5,
   showReadOnlyText = false,
   imageSize = 50,
@@ -216,6 +216,10 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   showRating = false,
   startingValue = ratingCount / 2,
 }) => {
+  // Set ratingTextColor default based on type
+  const textColor =
+    ratingTextColor || (type === 'custom' ? ratingColor : TYPES[type]?.color);
+
   const position = React.useRef(new Animated.Value(0)).current;
   const ratingRef = React.useRef<any>(null);
   const ratingBackdropValue = React.useRef<number>(0);
@@ -363,7 +367,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   };
 
   const getPrimaryViewStyle = () => {
-    const color = TYPES[type]?.color;
+    const color = type === 'custom' ? ratingColor : TYPES[type]?.color;
 
     const width = position.interpolate({
       inputRange: [
@@ -383,7 +387,8 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   };
 
   const getSecondaryViewStyle = () => {
-    const backgroundColor = TYPES[type]?.backgroundColor;
+    const backgroundColor =
+      type === 'custom' ? ratingBackgroundColor : TYPES[type]?.backgroundColor;
 
     const width = position.interpolate({
       inputRange: [
@@ -412,12 +417,12 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
           style={{
             width: imageSize,
             height: imageSize,
-            tintColor: ratingColor,
+            //tintColor: ratingColor, <-- Commented out temporarily and removed ratingColor from dependency array below
           }}
         />
       </View>
     ));
-  }, [ratingCount, imageSize, ratingColor, type, ratingImage]);
+  }, [ratingCount, imageSize, type, ratingImage]);
 
   return (
     <View
@@ -431,21 +436,19 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
           testID="RNVUI__SwipeRating-showRating"
         >
           <View style={styles.ratingView}>
-            <Text style={[styles.ratingText, { color: ratingTextColor }]}>
+            <Text style={[styles.ratingText, { color: textColor }]}>
               Rating:{' '}
             </Text>
-            <Text
-              style={[styles.currentRatingText, { color: ratingTextColor }]}
-            >
+            <Text style={[styles.currentRatingText, { color: textColor }]}>
               {currentRatingValue}
             </Text>
-            <Text style={[styles.maxRatingText, { color: ratingTextColor }]}>
+            <Text style={[styles.maxRatingText, { color: textColor }]}>
               /{ratingCount}
             </Text>
           </View>
           <View>
             {readonly && showReadOnlyText && (
-              <Text style={[styles.readonlyLabel, { color: ratingTextColor }]}>
+              <Text style={[styles.readonlyLabel, { color: textColor }]}>
                 (readonly)
               </Text>
             )}
