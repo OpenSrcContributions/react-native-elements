@@ -53,23 +53,22 @@ const TYPES: {
   },
 };
 
-//@ts-ignore
-const fractionsType: any = (props, propName, componentName) => {
-  if (props[propName]) {
-    const value = props[propName];
-
-    if (typeof value === 'number') {
-      return value >= 0 && value <= 20
-        ? null
-        : new Error(
-            `\`${propName}\` in \`${componentName}\` must be between 0 and 20`
-          );
-    }
-
+const fractionsType = (props: any, propName: string, componentName: string) => {
+  const v = props[propName];
+  if (v == null) {
+    return null;
+  }
+  if (typeof v !== 'number') {
     return new Error(
       `\`${propName}\` in \`${componentName}\` must be a number`
     );
   }
+  if (v < 0 || v > 20) {
+    return new Error(
+      `\`${propName}\` in \`${componentName}\` must be between 0 and 20`
+    );
+  }
+  return null;
 };
 
 export type SwipeRatingProps = {
@@ -168,7 +167,7 @@ export type SwipeRatingProps = {
    *
    * @default 0
    */
-  fractions?: typeof fractionsType;
+  fractions?: number;
 
   /**
    * The minimum value the user can select
@@ -209,7 +208,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   onStartRating = () => {},
   onSwipeRating = () => {},
   onFinishRating = () => {},
-  fractions,
+  fractions = 0,
   readonly = false,
   style,
   showRating = false,
@@ -470,6 +469,10 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
       </View>
     </View>
   );
+};
+
+SwipeRating.propTypes = {
+  fractions: fractionsType,
 };
 
 const styles = StyleSheet.create({
