@@ -52,6 +52,8 @@ const TYPES: {
   //  color: '#f1c40f',
   //  backgroundColor: 'white',
   //},
+  // Note: 'custom' type uses props directly (ratingImage, ratingColor, ratingBackgroundColor)
+  // No TYPES entry needed - handled via conditional logic throughout the component
 };
 
 //@ts-ignore
