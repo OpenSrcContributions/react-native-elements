@@ -217,6 +217,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   style,
   showRating = false,
   startingValue = ratingCount / 2,
+  tintColor,
 }) => {
   // Set ratingTextColor default based on type
   const textColor =
@@ -419,12 +420,12 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
           style={{
             width: imageSize,
             height: imageSize,
-            //tintColor: ratingColor, <-- Commented out temporarily and removed ratingColor from dependency array below
+            tintColor: tintColor,
           }}
         />
       </View>
     ));
-  }, [ratingCount, imageSize, type, ratingImage]);
+  }, [ratingCount, imageSize, type, ratingImage, tintColor]);
 
   return (
     <View
