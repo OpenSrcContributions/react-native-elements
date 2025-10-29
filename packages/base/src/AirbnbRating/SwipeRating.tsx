@@ -301,10 +301,17 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
     [ratingCount, minValue, imageSize, jumpValue, fractions]
   );
 
-  position.addListener(({ value }) => {
-    const rating = getCurrentRating(value);
-    setCurrentRatingValue(rating);
-  });
+  useEffect(() => {
+    const listenerId = position.addListener(({ value }) => {
+      const rating = getCurrentRating(value);
+      setCurrentRatingValue(rating);
+    });
+
+    // Cleanup listener on unmount to prevent memory leaks
+    return () => {
+      position.removeListener(listenerId);
+    };
+  }, [position, getCurrentRating]);
 
   const panResponderOnGrant = useCallback(
     //@ts-ignore
