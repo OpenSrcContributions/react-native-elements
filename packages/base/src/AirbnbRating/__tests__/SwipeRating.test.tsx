@@ -48,7 +48,7 @@ describe('SwipeRating', () => {
   it('should render with custom star color', () => {
     const customStarColor = 'red';
     const { getAllByTestId } = render(
-      <SwipeRating ratingColor={customStarColor} />
+      <SwipeRating tintColor={customStarColor} />
     );
     const stars = getAllByTestId('RNEUI__Star-image');
     stars.forEach((star) => {
