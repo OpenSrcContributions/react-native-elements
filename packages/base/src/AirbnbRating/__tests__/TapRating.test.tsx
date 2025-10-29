@@ -15,13 +15,13 @@ describe('TapRating Aka AirbnbRating', () => {
 
   it('show rating true should show rating', () => {
     const { getByTestId } = render(<TapRating showRating={true} />);
-    const ratingText = getByTestId('RNVUI__TapRating-showRating');
+    const ratingText = getByTestId('RNEUI__TapRating-showRating');
     expect(ratingText).toBeOnTheScreen();
   });
 
   it('number of stars should match count prop', () => {
     const { getAllByTestId } = render(<TapRating count={4} />);
-    const ratingStar = getAllByTestId('RNVUI__Star');
+    const ratingStar = getAllByTestId('RNEUI__Star');
     expect(ratingStar).toHaveLength(4);
   });
 
@@ -32,7 +32,7 @@ describe('TapRating Aka AirbnbRating', () => {
     const { getByTestId } = render(
       <TapRating reviews={ratingReviews} defaultRating={defaultRating} />
     );
-    const ratingText = getByTestId('RNVUI__TapRating-showRating');
+    const ratingText = getByTestId('RNEUI__TapRating-showRating');
     expect(ratingText).toBeOnTheScreen();
     expect(ratingText).toHaveTextContent(
       ratingReviews[defaultRating - 1] || ''
@@ -42,14 +42,14 @@ describe('TapRating Aka AirbnbRating', () => {
   it('review size should match reviewSize prop', () => {
     const reviewSize = 32;
     const { getByTestId } = render(<TapRating reviewSize={reviewSize} />);
-    const ratingText = getByTestId('RNVUI__TapRating-showRating');
+    const ratingText = getByTestId('RNEUI__TapRating-showRating');
     expect(ratingText.props.style.fontSize).toBe(reviewSize);
   });
 
   it('rating image size should should match image size', () => {
     const imageSize = 32;
     const { getAllByTestId } = render(<TapRating size={imageSize} />);
-    const ratingStars = getAllByTestId('RNVUI__Star-image');
+    const ratingStars = getAllByTestId('RNEUI__Star-image');
     ratingStars.forEach((star) => {
       expect(star.props.style.width).toBe(imageSize);
       expect(star.props.style.height).toBe(imageSize);
@@ -62,7 +62,7 @@ describe('TapRating Aka AirbnbRating', () => {
     const { getAllByTestId } = render(
       <TapRating onFinishRating={onFinishRating} />
     );
-    const ratingStars = getAllByTestId('RNVUI__Star');
+    const ratingStars = getAllByTestId('RNEUI__Star');
     fireEvent.press(ratingStars[pressableRating - 1]);
     expect(onFinishRating).toHaveBeenCalledWith(pressableRating);
   });
@@ -72,7 +72,7 @@ describe('TapRating Aka AirbnbRating', () => {
     const { getAllByTestId } = render(
       <TapRating isDisabled={true} onFinishRating={onFinishRating} />
     );
-    const ratingStars = getAllByTestId('RNVUI__Star');
+    const ratingStars = getAllByTestId('RNEUI__Star');
     fireEvent.press(ratingStars[0]);
     expect(onFinishRating).not.toHaveBeenCalled();
   });
@@ -83,7 +83,7 @@ describe('TapRating Aka AirbnbRating', () => {
     const { getAllByTestId } = render(
       <TapRating starImage={customStarImage} />
     );
-    const ratingStars = getAllByTestId('RNVUI__Star-image');
+    const ratingStars = getAllByTestId('RNEUI__Star-image');
     ratingStars.forEach((star) => {
       expect(star.props.source).toEqual(customStarImage);
     });
@@ -98,7 +98,7 @@ describe('TapRating Aka AirbnbRating', () => {
         defaultRating={5} //so that all stars are selected
       />
     );
-    const ratingStars = getAllByTestId('RNVUI__Star-image');
+    const ratingStars = getAllByTestId('RNEUI__Star-image');
     ratingStars.forEach((star) => {
       expect(star.props.style.tintColor).toBe(selectedColor);
     });
@@ -113,7 +113,7 @@ describe('TapRating Aka AirbnbRating', () => {
         defaultRating={0} //so that all stars are unselected
       />
     );
-    const ratingStars = getAllByTestId('RNVUI__Star-image');
+    const ratingStars = getAllByTestId('RNEUI__Star-image');
     ratingStars.forEach((star) => {
       expect(star.props.style.tintColor).toBe(unSelectedColor);
     });
@@ -123,7 +123,7 @@ describe('TapRating Aka AirbnbRating', () => {
     const { getAllByTestId } = render(
       <TapRating starStyle={customStarStyle} />
     );
-    const ratingStars = getAllByTestId('RNVUI__Star-image');
+    const ratingStars = getAllByTestId('RNEUI__Star-image');
     ratingStars.forEach((star) => {
       expect(star.props.style.backgroundColor).toEqual(
         customStarStyle.backgroundColor
@@ -136,7 +136,7 @@ describe('TapRating Aka AirbnbRating', () => {
     const { getByTestId } = render(
       <TapRating ratingContainerStyle={customContainerStyle} />
     );
-    const ratingContainer = getByTestId('RNVUI__TapRating');
+    const ratingContainer = getByTestId('RNEUI__TapRating');
     expect(ratingContainer.props.style.backgroundColor).toEqual(
       customContainerStyle.backgroundColor
     );
@@ -147,7 +147,7 @@ describe('TapRating Aka AirbnbRating', () => {
     const { getByTestId } = render(
       <TapRating starContainerStyle={customStarContainerStyle} />
     );
-    const ratingContainer = getByTestId('RNVUI__TapRating-starContainer');
+    const ratingContainer = getByTestId('RNEUI__TapRating-starContainer');
     expect(ratingContainer.props.style.backgroundColor).toEqual(
       customStarContainerStyle.backgroundColor
     );

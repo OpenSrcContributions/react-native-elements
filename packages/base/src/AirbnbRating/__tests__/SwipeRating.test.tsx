@@ -19,14 +19,14 @@ describe('SwipeRating', () => {
     const { getAllByTestId } = render(
       <SwipeRating ratingCount={ratingsCount} />
     );
-    const stars = getAllByTestId('RNVUI__Star');
+    const stars = getAllByTestId('RNEUI__Star');
     expect(stars).toHaveLength(ratingsCount);
   });
 
   it('should render with different type', () => {
     const heartImage = require('../images/heart.png');
     const { getAllByTestId } = render(<SwipeRating type="heart" />);
-    const swipeRatings = getAllByTestId('RNVUI__Star-image');
+    const swipeRatings = getAllByTestId('RNEUI__Star-image');
 
     swipeRatings.forEach((swipeRating) => {
       expect(swipeRating.props.source).toEqual(heartImage); // Check if the image source is the heart image
@@ -38,7 +38,7 @@ describe('SwipeRating', () => {
     const { getAllByTestId } = render(
       <SwipeRating type="custom" ratingImage={customImage} />
     );
-    const swipeRatings = getAllByTestId('RNVUI__Star-image');
+    const swipeRatings = getAllByTestId('RNEUI__Star-image');
 
     swipeRatings.forEach((swipeRating) => {
       expect(swipeRating.props.source).toEqual(customImage); // Check if the image source is the custom image
@@ -50,7 +50,7 @@ describe('SwipeRating', () => {
     const { getAllByTestId } = render(
       <SwipeRating ratingColor={customStarColor} />
     );
-    const stars = getAllByTestId('RNVUI__Star-image');
+    const stars = getAllByTestId('RNEUI__Star-image');
     stars.forEach((star) => {
       expect(star.props.style.tintColor).toBe(customStarColor);
     });
@@ -61,7 +61,7 @@ describe('SwipeRating', () => {
     const { getAllByTestId } = render(
       <SwipeRating imageSize={customStarSize} />
     );
-    const stars = getAllByTestId('RNVUI__Star-image');
+    const stars = getAllByTestId('RNEUI__Star-image');
     stars.forEach((star) => {
       expect(star.props.style.width).toBe(customStarSize);
       expect(star.props.style.height).toBe(customStarSize);
@@ -73,7 +73,7 @@ describe('SwipeRating', () => {
     const { getAllByTestId } = render(
       <SwipeRating ratingCount={ratingsCount} />
     );
-    const stars = getAllByTestId('RNVUI__Star');
+    const stars = getAllByTestId('RNEUI__Star');
     expect(stars).toHaveLength(ratingsCount);
   });
 
@@ -83,7 +83,7 @@ describe('SwipeRating', () => {
     const { getByTestId } = render(
       <SwipeRating ratingCount={ratingsCount} showRating />
     );
-    const ratingText = getByTestId('RNVUI__SwipeRating-showRating');
+    const ratingText = getByTestId('RNEUI__SwipeRating-showRating');
     expect(ratingText).toBeTruthy();
   });
 });

@@ -420,10 +420,10 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   const renderRatings = React.useMemo(() => {
     const source = type === 'custom' ? ratingImage : TYPES[type]?.source;
     return Array.from({ length: ratingCount }, (_, index) => (
-      <View key={index} style={styles.starsWrapper} testID="RNVUI__Star">
+      <View key={index} style={styles.starsWrapper} testID="RNEUI_Star">
         <Image
           source={source}
-          testID="RNVUI__Star-image"
+          testID="RNEUI_Star-image"
           style={{
             width: imageSize,
             height: imageSize,
@@ -438,12 +438,12 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
     <View
       pointerEvents={readonly ? 'none' : 'auto'}
       style={style}
-      testID="RNVUI__SwipeRating"
+      testID="RNEUI__SwipeRating"
     >
       {showRating && (
         <View
           style={styles.showRatingView}
-          testID="RNVUI__SwipeRating-showRating"
+          testID="RNEUI__SwipeRating-showRating"
         >
           <View style={styles.ratingView}>
             <Text style={[styles.ratingText, { color: textColor }]}>
@@ -468,7 +468,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
       <View
         style={styles.starsWrapper}
         {...panResponder.panHandlers}
-        testID="RNVUI__SwipeRating-pan"
+        testID="RNEUI__SwipeRating-pan"
       >
         <View
           style={styles.starsInsideWrapper}
