@@ -4672,6 +4672,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-vector-icons/common@npm:^12.4.0":
+  version: 12.4.0
+  resolution: "@react-native-vector-icons/common@npm:12.4.0"
+  dependencies:
+    find-up: "npm:^7.0.0"
+    picocolors: "npm:^1.1.1"
+    plist: "npm:^3.1.0"
+  peerDependencies:
+    "@react-native-vector-icons/get-image": ^12.3.0
+    react: "*"
+    react-native: "*"
+  peerDependenciesMeta:
+    "@react-native-vector-icons/get-image":
+      optional: true
+  bin:
+    rnvi-update-plist: lib/commonjs/scripts/updatePlist.js
+  checksum: 10/9c59a8c21f98106621320f77b89e9ea11a2d59d70d61576742ffb65e7426537d3b218de46dd997c63422ff37347d44513e64d3305625423a21ec9a21581c8d94
+  languageName: node
+  linkType: hard
+
+"@react-native-vector-icons/feather@npm:^12.3.0":
+  version: 12.4.0
+  resolution: "@react-native-vector-icons/feather@npm:12.4.0"
+  dependencies:
+    "@react-native-vector-icons/common": "npm:^12.4.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10/5dc382498f5710115c67142800cad2fa79e5948f766eefa56df6c059b4b10fbd7ea5476032a40859d143d63e5aead7df782beffe10caeb660bb010939edba2ad
+  languageName: node
+  linkType: hard
+
 "@react-native-vector-icons/fontawesome@npm:^12.3.0":
   version: 12.3.0
   resolution: "@react-native-vector-icons/fontawesome@npm:12.3.0"
@@ -4693,6 +4725,18 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10/a27097b89a0975af1ecd697ee4ce8f4b753373d2d12acae217153534747a60bf29aa640ef36714d70b11c6c08dfcbc68f809e2c0156332a27c29f1889bfdad64
+  languageName: node
+  linkType: hard
+
+"@react-native-vector-icons/octicons@npm:^20.3.0":
+  version: 20.4.0
+  resolution: "@react-native-vector-icons/octicons@npm:20.4.0"
+  dependencies:
+    "@react-native-vector-icons/common": "npm:^12.4.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10/0be73292592f89f8c10644a7f5063504e11893533ab9e39e4af5eccb1a9c849de08ccdaf20c3063417c47d2005ec6822cb551ef12069c941e9abde9f7dfdeeb4
   languageName: node
   linkType: hard
 
