@@ -3998,21 +3998,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rn-vui/ratings@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@rn-vui/ratings@npm:0.5.0"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 10/65b7dad752d5529045b5ac717dfc7b208055f12029a9bcf7a06fbc7480bf3ebf11bc75a61f29819734ce7efc9eaa3e0aed362b2a59d64a33a629ed1b6686f559
-  languageName: node
-  linkType: hard
-
 "@rneui/base@npm:4.0.0-rc.8, @rneui/base@workspace:packages/base":
   version: 0.0.0-use.local
   resolution: "@rneui/base@workspace:packages/base"
   dependencies:
-    "@rn-vui/ratings": "npm:^0.5.0"
     "@types/color": "npm:^3.0.3"
     "@types/hoist-non-react-statics": "npm:^3.3.1"
     "@types/react-native-vector-icons": "npm:^6.4.10"
@@ -4024,6 +4013,8 @@ __metadata:
     react-native-size-matters: "npm:^0.4.0"
     react-native-vector-icons: "npm:^10.1.0"
   peerDependencies:
+    "@testing-library/jest-native": ^5.4.3
+    "@testing-library/react-native": ^13.2.0
     react-native-safe-area-context: ">= 3.0.0"
     react-native-vector-icons: ">7.0.0"
   languageName: unknown
@@ -4095,6 +4086,23 @@ __metadata:
   dependencies:
     "@sinonjs/commons": "npm:^3.0.0"
   checksum: 10/78155c7bd866a85df85e22028e046b8d46cf3e840f72260954f5e3ed5bd97d66c595524305a6841ffb3f681a08f6e5cef572a2cce5442a8a232dc29fb409b83e
+  languageName: node
+  linkType: hard
+
+"@testing-library/jest-native@npm:^5.4.3":
+  version: 5.4.3
+  resolution: "@testing-library/jest-native@npm:5.4.3"
+  dependencies:
+    chalk: "npm:^4.1.2"
+    jest-diff: "npm:^29.0.1"
+    jest-matcher-utils: "npm:^29.0.1"
+    pretty-format: "npm:^29.0.3"
+    redent: "npm:^3.0.0"
+  peerDependencies:
+    react: ">=16.0.0"
+    react-native: ">=0.59"
+    react-test-renderer: ">=16.0.0"
+  checksum: 10/101bb2ca016d791d817b918a6189900d115b1de07e37340099deb1c9d3754a7ee0e86ea9bbb106c24b491fd8850873ec00f4ba3d8ffde6a470fba4a7e5619857
   languageName: node
   linkType: hard
 
@@ -4447,6 +4455,16 @@ __metadata:
   dependencies:
     "@types/istanbul-lib-report": "npm:*"
   checksum: 10/93eb18835770b3431f68ae9ac1ca91741ab85f7606f310a34b3586b5a34450ec038c3eed7ab19266635499594de52ff73723a54a72a75b9f7d6a956f01edee95
+  languageName: node
+  linkType: hard
+
+"@types/jest@npm:^29.5.5":
+  version: 29.5.14
+  resolution: "@types/jest@npm:29.5.14"
+  dependencies:
+    expect: "npm:^29.0.0"
+    pretty-format: "npm:^29.0.0"
+  checksum: 10/59ec7a9c4688aae8ee529316c43853468b6034f453d08a2e1064b281af9c81234cec986be796288f1bbb29efe943bc950e70c8fa8faae1e460d50e3cf9760f9b
   languageName: node
   linkType: hard
 
@@ -8732,7 +8750,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expect@npm:^29.7.0":
+"expect@npm:^29.0.0, expect@npm:^29.7.0":
   version: 29.7.0
   resolution: "expect@npm:29.7.0"
   dependencies:
@@ -11354,7 +11372,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:^29.7.0":
+"jest-diff@npm:^29.0.1, jest-diff@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-diff@npm:29.7.0"
   dependencies:
@@ -11493,7 +11511,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-matcher-utils@npm:^29.7.0":
+"jest-matcher-utils@npm:^29.0.1, jest-matcher-utils@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-matcher-utils@npm:29.7.0"
   dependencies:
@@ -11768,7 +11786,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^29.6.3":
+"jest@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest@npm:29.7.0"
   dependencies:
@@ -15173,7 +15191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^29.7.0":
+"pretty-format@npm:^29.0.0, pretty-format@npm:^29.0.3, pretty-format@npm:^29.7.0":
   version: 29.7.0
   resolution: "pretty-format@npm:29.7.0"
   dependencies:
@@ -16409,9 +16427,11 @@ __metadata:
     "@babel/preset-env": "npm:^7.26.9"
     "@react-native/babel-preset": "npm:^0.76.9"
     "@react-native/eslint-config": "npm:^0.76.9"
+    "@testing-library/jest-native": "npm:^5.4.3"
     "@testing-library/react-native": "npm:^13.2.0"
     "@tsconfig/react-native": "npm:^3.0.0"
     "@types/babel__preset-env": "npm:^7"
+    "@types/jest": "npm:^29.5.5"
     "@types/react": "npm:^18.2.6"
     "@types/react-test-renderer": "npm:^18.3.1"
     babel-jest: "npm:^29.6.3"
@@ -16419,7 +16439,7 @@ __metadata:
     eslint-plugin-ft-flow: "npm:^3.0.11"
     eslint-plugin-prettier: "npm:^4.0.0"
     husky: "npm:^9.1.7"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.7.0"
     jest-transform-stub: "npm:^2.0.0"
     lerna: "npm:^4.0.0"
     lint-staged: "npm:^12.4.1"

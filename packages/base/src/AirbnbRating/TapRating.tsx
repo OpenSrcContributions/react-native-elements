@@ -144,11 +144,11 @@ const TapRating: React.FunctionComponent<TapRatingProps> = ({
     return rating_array.map((star) => star);
   };
 
-  const starSelectedInPosition = (position: number) => {
+  const starSelectedInPosition = (selectedPosition: number) => {
     if (typeof onFinishRating === 'function') {
-      onFinishRating(position);
+      onFinishRating(selectedPosition);
     }
-    setPosition(position);
+    setPosition(selectedPosition);
   };
 
   const rating_array = [];
@@ -173,7 +173,7 @@ const TapRating: React.FunctionComponent<TapRatingProps> = ({
   return (
     <View
       style={StyleSheet.flatten([styles.ratingContainer, ratingContainerStyle])}
-      testID="RNVUI__TapRating"
+      testID="RNEUI__TapRating"
     >
       {showRating && (
         <Text
@@ -181,14 +181,14 @@ const TapRating: React.FunctionComponent<TapRatingProps> = ({
             styles.reviewText,
             { fontSize: reviewSize, color: reviewColor },
           ])}
-          testID="RNVUI__TapRating-showRating"
+          testID="RNEUI__TapRating-showRating"
         >
           {reviews[position - 1]}
         </Text>
       )}
       <View
         style={StyleSheet.flatten([styles.starContainer, starContainerStyle])}
-        testID="RNVUI__TapRating-starContainer"
+        testID="RNEUI__TapRating-starContainer"
       >
         {renderStars(rating_array)}
       </View>

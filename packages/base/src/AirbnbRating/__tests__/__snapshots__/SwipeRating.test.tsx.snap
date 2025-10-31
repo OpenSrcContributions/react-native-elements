@@ -3,7 +3,7 @@
 exports[`SwipeRating should match snapshot 1`] = `
 <View
   pointerEvents="auto"
-  testID="RNVUI__SwipeRating"
+  testID="RNEUI__SwipeRating"
 >
   <View
     onMoveShouldSetResponder={[Function]}
@@ -25,7 +25,7 @@ exports[`SwipeRating should match snapshot 1`] = `
         "justifyContent": "center",
       }
     }
-    testID="RNVUI__SwipeRating-pan"
+    testID="RNEUI__SwipeRating-pan"
   >
     <View
       onLayout={[Function]}
@@ -71,7 +71,7 @@ exports[`SwipeRating should match snapshot 1`] = `
           "justifyContent": "center",
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         source=""
@@ -82,7 +82,7 @@ exports[`SwipeRating should match snapshot 1`] = `
             "width": 50,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
     <View
@@ -93,7 +93,7 @@ exports[`SwipeRating should match snapshot 1`] = `
           "justifyContent": "center",
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         source=""
@@ -104,7 +104,7 @@ exports[`SwipeRating should match snapshot 1`] = `
             "width": 50,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
     <View
@@ -115,7 +115,7 @@ exports[`SwipeRating should match snapshot 1`] = `
           "justifyContent": "center",
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         source=""
@@ -126,7 +126,7 @@ exports[`SwipeRating should match snapshot 1`] = `
             "width": 50,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
     <View
@@ -137,7 +137,7 @@ exports[`SwipeRating should match snapshot 1`] = `
           "justifyContent": "center",
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         source=""
@@ -148,7 +148,7 @@ exports[`SwipeRating should match snapshot 1`] = `
             "width": 50,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
     <View
@@ -159,7 +159,7 @@ exports[`SwipeRating should match snapshot 1`] = `
           "justifyContent": "center",
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         source=""
@@ -170,7 +170,7 @@ exports[`SwipeRating should match snapshot 1`] = `
             "width": 50,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
   </View>
