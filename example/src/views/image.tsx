@@ -1,6 +1,5 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from '@rneui/themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Header } from '../components/header';
@@ -11,7 +10,7 @@ const ImageAPI = () => {
   return (
     <>
       <Header title="Image" view="image" />
-      <SafeAreaView edges={['left', 'right', 'bottom']}>
+      <SafeAreaView edges={{top: "off"}}>
         <FlatList
           data={[...new Array(10)].map((_, i) => i.toString())}
           style={styles.list}

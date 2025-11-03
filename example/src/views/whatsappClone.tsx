@@ -27,7 +27,7 @@ const WhatsappClone: React.FunctionComponent = () => {
   return (
     <>
       <Header title="Whatsapp Clone" />
-      <SafeAreaView edges={['left', 'right', 'bottom']} style={styles.safeArea}>
+      <SafeAreaView style={styles.safeArea} edges={{top: "off"}}>
         <View style={styles.header1}>
           <Text
             style={{
