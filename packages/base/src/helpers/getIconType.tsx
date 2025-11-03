@@ -53,7 +53,7 @@ const iconSets: Record<string, () => IconModule | null> = {
      *
      */
     console.warn(
-      'Warning: "material-community" is deprecated. Use "material-design-icons" instead.'
+      'Warning: Value for type "material-community" is deprecated. Use "material-design" instead.'
     );
     try {
       return require('@react-native-vector-icons/material-design-icons')
