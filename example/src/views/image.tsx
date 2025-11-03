@@ -1,7 +1,7 @@
 import React from 'react';
-import { FlatList, SafeAreaView, StyleSheet, Text } from 'react-native';
+import { FlatList, StyleSheet, Text } from 'react-native';
 import { Image } from '@rneui/themed';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Header } from '../components/header';
 
 // const BASE_URI = 'https://picsum.photos/200/300';
@@ -10,7 +10,7 @@ const ImageAPI = () => {
   return (
     <>
       <Header title="Image" view="image" />
-      <SafeAreaView>
+      <SafeAreaView edges={{top: "off"}}>
         <FlatList
           data={[...new Array(10)].map((_, i) => i.toString())}
           style={styles.list}
