@@ -46,11 +46,14 @@ const TYPES: {
     color: '#f39c12',
     backgroundColor: 'white',
   },
-  custom: {
-    source: STAR_IMAGE,
-    color: '#f1c40f',
-    backgroundColor: 'white',
-  },
+  // Remove hardcoded custom type fallback for now
+  //custom: {
+  //  source: STAR_IMAGE,
+  //  color: '#f1c40f',
+  //  backgroundColor: 'white',
+  //},
+  // Note: 'custom' type uses props directly (ratingImage, ratingColor, ratingBackgroundColor)
+  // No TYPES entry needed - handled via conditional logic throughout the component
 };
 
 const fractionsType = (props: any, propName: string, componentName: string) => {
@@ -199,7 +202,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   ratingImage = STAR_IMAGE,
   ratingColor,
   ratingBackgroundColor = 'white',
-  ratingTextColor = TYPES[type]?.color,
+  ratingTextColor,
   ratingCount = 5,
   showReadOnlyText = false,
   imageSize = 50,
@@ -213,7 +216,12 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   style,
   showRating = false,
   startingValue = ratingCount / 2,
+  tintColor,
 }) => {
+  // Set ratingTextColor default based on type
+  const textColor =
+    ratingTextColor || (type === 'custom' ? ratingColor : TYPES[type]?.color);
+
   const position = React.useRef(new Animated.Value(0)).current;
   const ratingRef = React.useRef<any>(null);
   const ratingBackdropValue = React.useRef<number>(0);
@@ -292,10 +300,17 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
     [ratingCount, minValue, imageSize, jumpValue, fractions]
   );
 
-  position.addListener(({ value }) => {
-    const rating = getCurrentRating(value);
-    setCurrentRatingValue(rating);
-  });
+  useEffect(() => {
+    const listenerId = position.addListener(({ value }) => {
+      const rating = getCurrentRating(value);
+      setCurrentRatingValue(rating);
+    });
+
+    // Cleanup listener on unmount to prevent memory leaks
+    return () => {
+      position.removeListener(listenerId);
+    };
+  }, [position, getCurrentRating]);
 
   const panResponderOnGrant = useCallback(
     //@ts-ignore
@@ -361,7 +376,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   };
 
   const getPrimaryViewStyle = () => {
-    const color = TYPES[type]?.color;
+    const color = type === 'custom' ? ratingColor : TYPES[type]?.color;
 
     const width = position.interpolate({
       inputRange: [
@@ -381,7 +396,8 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   };
 
   const getSecondaryViewStyle = () => {
-    const backgroundColor = TYPES[type]?.backgroundColor;
+    const backgroundColor =
+      type === 'custom' ? ratingBackgroundColor : TYPES[type]?.backgroundColor;
 
     const width = position.interpolate({
       inputRange: [
@@ -401,49 +417,47 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   };
 
   const renderRatings = React.useMemo(() => {
-    const source = TYPES[type]?.source;
+    const source = type === 'custom' ? ratingImage : TYPES[type]?.source;
     return Array.from({ length: ratingCount }, (_, index) => (
-      <View key={index} style={styles.starsWrapper} testID="RNVUI__Star">
+      <View key={index} style={styles.starsWrapper} testID="RNEUI__Star">
         <Image
           source={source}
-          testID="RNVUI__Star-image"
+          testID="RNEUI__Star-image"
           style={{
             width: imageSize,
             height: imageSize,
-            tintColor: ratingColor,
+            tintColor: tintColor,
           }}
         />
       </View>
     ));
-  }, [ratingCount, imageSize, ratingColor, type]);
+  }, [ratingCount, imageSize, type, ratingImage, tintColor]);
 
   return (
     <View
       pointerEvents={readonly ? 'none' : 'auto'}
       style={style}
-      testID="RNVUI__SwipeRating"
+      testID="RNEUI__SwipeRating"
     >
       {showRating && (
         <View
           style={styles.showRatingView}
-          testID="RNVUI__SwipeRating-showRating"
+          testID="RNEUI__SwipeRating-showRating"
         >
           <View style={styles.ratingView}>
-            <Text style={[styles.ratingText, { color: ratingTextColor }]}>
+            <Text style={[styles.ratingText, { color: textColor }]}>
               Rating:{' '}
             </Text>
-            <Text
-              style={[styles.currentRatingText, { color: ratingTextColor }]}
-            >
+            <Text style={[styles.currentRatingText, { color: textColor }]}>
               {currentRatingValue}
             </Text>
-            <Text style={[styles.maxRatingText, { color: ratingTextColor }]}>
+            <Text style={[styles.maxRatingText, { color: textColor }]}>
               /{ratingCount}
             </Text>
           </View>
           <View>
             {readonly && showReadOnlyText && (
-              <Text style={[styles.readonlyLabel, { color: ratingTextColor }]}>
+              <Text style={[styles.readonlyLabel, { color: textColor }]}>
                 (readonly)
               </Text>
             )}
@@ -453,7 +467,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
       <View
         style={styles.starsWrapper}
         {...panResponder.panHandlers}
-        testID="RNVUI__SwipeRating-pan"
+        testID="RNEUI__SwipeRating-pan"
       >
         <View
           style={styles.starsInsideWrapper}

@@ -10,7 +10,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
       "justifyContent": "center",
     }
   }
-  testID="RNVUI__TapRating"
+  testID="RNEUI__TapRating"
 >
   <Text
     style={
@@ -21,7 +21,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
         "margin": 10,
       }
     }
-    testID="RNVUI__TapRating-showRating"
+    testID="RNEUI__TapRating-showRating"
   >
     Okay
   </Text>
@@ -33,7 +33,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
         "justifyContent": "center",
       }
     }
-    testID="RNVUI__TapRating-starContainer"
+    testID="RNEUI__TapRating-starContainer"
   >
     <View
       accessibilityState={
@@ -68,7 +68,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
           "opacity": 1,
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         collapsable={false}
@@ -86,7 +86,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
             "width": 40,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
     <View
@@ -122,7 +122,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
           "opacity": 1,
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         collapsable={false}
@@ -140,7 +140,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
             "width": 40,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
     <View
@@ -176,7 +176,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
           "opacity": 1,
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         collapsable={false}
@@ -194,7 +194,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
             "width": 40,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
     <View
@@ -230,7 +230,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
           "opacity": 1,
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         collapsable={false}
@@ -248,7 +248,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
             "width": 40,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
     <View
@@ -284,7 +284,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
           "opacity": 1,
         }
       }
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Image
         collapsable={false}
@@ -302,7 +302,7 @@ exports[`TapRating Aka AirbnbRating should match snapshot 1`] = `
             "width": 40,
           }
         }
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
       />
     </View>
   </View>

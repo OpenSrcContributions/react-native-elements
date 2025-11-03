@@ -33,7 +33,7 @@ const Star: React.FunctionComponent<StarProps> = ({
   position = 1,
   starSelectedInPosition = () => {},
 }) => {
-  const springValue = new Animated.Value(1);
+  const springValue = React.useRef(new Animated.Value(1)).current;
 
   const spring = () => {
     springValue.setValue(1.2);
@@ -56,11 +56,11 @@ const Star: React.FunctionComponent<StarProps> = ({
       activeOpacity={1}
       onPress={spring}
       disabled={isDisabled}
-      testID="RNVUI__Star"
+      testID="RNEUI__Star"
     >
       <Animated.Image
         source={starSource}
-        testID="RNVUI__Star-image"
+        testID="RNEUI__Star-image"
         style={StyleSheet.flatten([
           styles.starStyle,
           {

@@ -80,6 +80,7 @@ const Ratings: React.FunctionComponent<RatingsComponentProps> = () => {
             type="custom"
             ratingImage={WATER_IMAGE}
             ratingColor="#3498db"
+            ratingBackgroundColor="#c8c7c8"
             ratingCount={10}
             imageSize={30}
             onFinishRating={ratingCompleted}
