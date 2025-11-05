@@ -54,7 +54,7 @@ const Header: React.FunctionComponent<HeaderComponentProps> = (props) => {
               style={{ marginLeft: 10 }}
               onPress={playgroundNavigate}
             >
-              <Icon type="antdesign" name="rocket1" color="white" />
+              <Icon type="antdesign" name="rocket" color="white" />
             </TouchableOpacity>
           </View>
         )

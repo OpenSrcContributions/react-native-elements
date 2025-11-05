@@ -38,7 +38,7 @@ const sections: SettingsData[] = [
     data: [
       {
         title: 'Airplane Mode',
-        icon: 'ios-airplane',
+        icon: 'airplane',
         backgroundColor: ORANGE,
         hideChevron: true,
         checkbox: true,
@@ -47,26 +47,26 @@ const sections: SettingsData[] = [
       {
         title: 'Wi-Fi',
         backgroundColor: BLUE,
-        icon: 'ios-wifi',
+        icon: 'wifi',
         type: 'ionicon',
       },
       {
         title: 'Bluetooth',
         backgroundColor: BLUE,
-        icon: 'ios-bluetooth',
+        icon: 'bluetooth',
         rightTitle: 'Off',
         type: 'ionicon',
       },
       {
         title: 'Cellular',
         backgroundColor: GREEN,
-        icon: 'ios-phone-portrait',
+        icon: 'phone-portrait',
         type: 'ionicon',
       },
       {
         title: 'Personal Hotspot',
         backgroundColor: GREEN,
-        icon: 'ios-radio',
+        icon: 'radio-outline',
         rightTitle: 'Off',
         type: 'ionicon',
       },
@@ -76,7 +76,7 @@ const sections: SettingsData[] = [
     data: [
       {
         title: 'Notifications',
-        icon: 'ios-notifications',
+        icon: 'notifications',
         backgroundColor: RED,
         type: 'ionicon',
       },
@@ -89,7 +89,7 @@ const sections: SettingsData[] = [
       {
         title: 'Do Not Disturb',
         backgroundColor: PURPLE,
-        icon: 'ios-moon',
+        icon: 'moon',
         type: 'ionicon',
       },
     ],
@@ -98,50 +98,50 @@ const sections: SettingsData[] = [
     data: [
       {
         title: 'General',
-        icon: 'ios-settings',
+        icon: 'settings',
         backgroundColor: GREY,
         type: 'ionicon',
       },
       {
         title: 'Display & Brightness',
         backgroundColor: BLUE,
-        icon: 'ios-bulb',
+        icon: 'bulb',
         type: 'ionicon',
       },
       {
         title: 'Wallpaper',
         backgroundColor: TEAL_BLUE,
-        icon: 'ios-color-wand',
+        icon: 'color-wand',
         type: 'ionicon',
       },
       {
         title: 'Sounds',
         backgroundColor: RED,
-        icon: 'ios-volume-high',
+        icon: 'volume-high',
         type: 'ionicon',
       },
       {
         title: 'Touch ID & Code',
         backgroundColor: RED,
-        icon: 'ios-finger-print',
+        icon: 'finger-print',
         type: 'ionicon',
       },
       {
         title: 'Emergency Call',
         backgroundColor: ORANGE,
-        icon: 'ios-medical',
+        icon: 'medical',
         type: 'ionicon',
       },
       {
         title: 'Battery',
         backgroundColor: GREEN,
-        icon: 'ios-battery-full',
+        icon: 'battery-full',
         type: 'ionicon',
       },
       {
         title: 'Confidentiality',
         backgroundColor: GREY,
-        icon: 'ios-hand-left',
+        icon: 'hand-left',
         type: 'ionicon',
       },
     ],
