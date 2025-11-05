@@ -4,7 +4,6 @@
     "owner": "rneui",
     "slug": "react-native-elements",
     "description": "A demo app for React Native Elements UI Library",
-    "privacy": "public",
     "platforms": [
       "ios",
       "android",
