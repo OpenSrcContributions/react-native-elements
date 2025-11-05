@@ -22,9 +22,10 @@ This app also works on the `web` platform using [React Native Web](https://githu
 
 2. Clone the project
 
-   ```bash
-   git clone https://github.com/react-native-elements/react-native-elements.git
-   ```
+   ````bash
+   git clone https://github.com/react-native-elements/react-native-elements.git   ```
+
+   ````
 
 3. Install dependencies
 
@@ -42,13 +43,13 @@ This app also works on the `web` platform using [React Native Web](https://githu
 
 4. Run the cross-platform app (uses [Expo](https://expo.io/learn))
 
-   ```bash
-   # Using yarn
-   yarn start
+```bash
+ # Using yarn
+ yarn start
 
-   # Using npm
-   npm start
-   ```
+ # Using npm
+ npm start
+```
 
 ### Deploy Web App
 
