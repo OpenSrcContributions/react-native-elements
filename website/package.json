@@ -43,7 +43,9 @@
     "express": "^4.20.0",
     "micromatch": "^4.0.8",
     "tar": "^6.2.1",
-    "follow-redirects": "^1.15.6"
+    "follow-redirects": "^1.15.6",
+    "lodash": "^4.17.21",
+    "lodash.template": "^4.5.0"
   },
   "scripts": {
     "examples": "docusaurus examples",
