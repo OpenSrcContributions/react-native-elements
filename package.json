@@ -9,6 +9,9 @@
       "scripts/docgen"
     ]
   },
+  "resolutions": {
+    "form-data": "^4.0.4"
+  },
   "scripts": {
     "build": "yarn workspaces foreach -Ap --topological-dev run build",
     "build:docs-api": "yarn workspace @rneui/doc-gen build",
