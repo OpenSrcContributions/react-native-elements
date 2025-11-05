@@ -3151,30 +3151,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rn-vui/ratings@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@rn-vui/ratings@npm:0.5.0"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 49ad301e9bd4c7570556e3477cc051692c5c55400456e64611a7886e7347f25cc30aa7b348a1d2b7973de28047fbd6dc22f8ce89117f8ed4198c8283441af408
-  languageName: node
-  linkType: hard
-
 "@rneui/base@file:../packages/base::locator=rne-website%40workspace%3A.":
   version: 4.0.0-rc.8
-  resolution: "@rneui/base@file:../packages/base#../packages/base::hash=2e529a&locator=rne-website%40workspace%3A."
+  resolution: "@rneui/base@file:../packages/base#../packages/base::hash=47fe01&locator=rne-website%40workspace%3A."
   dependencies:
-    "@rn-vui/ratings": ^0.5.0
     "@types/react-native-vector-icons": ^6.4.10
     color: ^3.2.1
     deepmerge: ^4.2.2
     hoist-non-react-statics: ^3.3.2
     react-native-size-matters: ^0.4.0
   peerDependencies:
+    "@testing-library/jest-native": ^5.4.3
+    "@testing-library/react-native": ^13.2.0
     react-native-safe-area-context: ">= 3.0.0"
     react-native-vector-icons: ">7.0.0"
-  checksum: 56ccede5f06edc8310d68972cf8084c61f1a0129f2e69e4cb588272fba7209565475d5dff0c4ee0e31d13a87b0c3f7c5b4175a456b39687df9cb5422678dfb2a
+  checksum: f6753a1168ed70ba55082e83118d7ff6bba23b4da918c028ca7acfa43d70d082ac11c17ad9adb150b797b410756564bdd341e67a1ea5acc4c501a6d5176029e3
   languageName: node
   linkType: hard
 
@@ -11783,18 +11774,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-ratings@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "react-native-ratings@npm:8.1.0"
-  dependencies:
-    lodash: ^4.17.15
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 34aa4e7ff09e537d5c8fb5b5bc98470c0723d7c0fff8954e39de371cdfa5ae3aa4af636ea44d508751f5dcaca6f80ee363fffd9c34a1bd8d8f7a9d8a23d82d15
-  languageName: node
-  linkType: hard
-
 "react-native-safe-area-context@npm:^3.4.1":
   version: 3.4.1
   resolution: "react-native-safe-area-context@npm:3.4.1"
@@ -12478,7 +12457,6 @@ __metadata:
     react-dom: ^17.0.2
     react-icons: ^4.3.1
     react-native-elements: ^3.4.2
-    react-native-ratings: ^8.1.0
     react-native-safe-area-context: ^3.4.1
     react-native-vector-icons: ^9.1.0
     react-native-web: ^0.17.7
