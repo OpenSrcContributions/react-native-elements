@@ -3,9 +3,9 @@ import {
   View,
   ScrollView,
   StyleSheet,
-  SafeAreaView,
   Dimensions,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   Avatar,
   FAB,
@@ -27,7 +27,7 @@ const WhatsappClone: React.FunctionComponent = () => {
   return (
     <>
       <Header title="Whatsapp Clone" />
-      <SafeAreaView style={styles.safeArea}>
+      <SafeAreaView edges={['left', 'right', 'bottom']} style={styles.safeArea}>
         <View style={styles.header1}>
           <Text
             style={{
