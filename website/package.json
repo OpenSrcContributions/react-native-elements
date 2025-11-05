@@ -6,7 +6,8 @@
     "form-data": "^4.0.4",
     "axios": "^0.30.2",
     "ua-parser-js": "^0.7.33",
-    "@babel/traverse": "^7.23.2"
+    "@babel/traverse": "^7.23.2",
+    "webpack": "^5.94.0"
   },
   "scripts": {
     "examples": "docusaurus examples",
