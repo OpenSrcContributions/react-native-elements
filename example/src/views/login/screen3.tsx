@@ -8,6 +8,7 @@ import {
   Dimensions,
   LayoutAnimation,
   UIManager,
+  Platform,
 } from 'react-native';
 import { Input, Button, Icon, InputProps } from '@rneui/themed';
 
@@ -15,9 +16,10 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const BG_IMAGE = require('../../../assets/images/bg_screen4.jpg');
 
-// Enable LayoutAnimation on Android
-UIManager.setLayoutAnimationEnabledExperimental &&
-  UIManager.setLayoutAnimationEnabledExperimental(true);
+// Enable LayoutAnimation on Android (only needed for old architecture)
+if (Platform.OS === 'android' && !(global as any).RN_FABRIC_ENABLED) {
+  UIManager.setLayoutAnimationEnabledExperimental?.(true);
+}
 
 type TabSelectorProps = {
   selected: boolean;
@@ -49,9 +51,9 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = (
   const [isConfirmPasswordValid, setConfirmPasswordValid] =
     useState<boolean>(true);
   const [selectedCategory, setSelectedCategory] = useState<number>(0);
-  const emailInput = useRef<InputProps>(null);
-  const passwordInput = useRef<InputProps>(null);
-  const confirmationInput = useRef<InputProps>(null);
+  const emailInput = useRef<any>(null);
+  const passwordInput = useRef<any>(null);
+  const confirmationInput = useRef<any>(null);
 
   const isLoginPage = selectedCategory === 0;
   const isSignUpPage = selectedCategory === 1;
@@ -72,10 +74,11 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = (
     setLoading(true);
     // Simulate an API call
     setTimeout(() => {
-      const isEmailValidFlag =
-        validateEmail(email) || emailInput.current.shake();
-      const isPasswordValidFlag =
-        password.length >= 8 || passwordInput.current.shake();
+      const isEmailValidFlag = validateEmail(email);
+      const isPasswordValidFlag = password.length >= 8;
+      
+      if (!isEmailValidFlag) emailInput.current?.shake();
+      if (!isPasswordValidFlag) passwordInput.current?.shake();
 
       LayoutAnimation.easeInEaseOut();
       setLoading(false);
@@ -91,20 +94,19 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = (
     setLoading(true);
     // Simulate an API call
     setTimeout(() => {
-      const isEmailValidFlag =
-        validateEmail(email) || emailInput.current.shake();
-      const isPasswordValidFlag =
-        password.length >= 8 || passwordInput.current.shake();
-      const isConfirmPasswordValidFlag =
-        password === confirmPassword || confirmationInput.current.shake();
+      const isEmailValidFlag = validateEmail(email);
+      const isPasswordValidFlag = password.length >= 8;
+      const isConfirmPasswordValidFlag = password === confirmPassword;
+      
+      if (!isEmailValidFlag) emailInput.current?.shake();
+      if (!isPasswordValidFlag) passwordInput.current?.shake();
+      if (!isConfirmPasswordValidFlag) confirmationInput.current?.shake();
 
       LayoutAnimation.easeInEaseOut();
       setLoading(false);
-      setEmailValid(validateEmail(email) || emailInput.current.shake());
-      setPasswordValid(password.length >= 8 || passwordInput.current.shake());
-      setConfirmPasswordValid(
-        password === confirmPassword || confirmationInput.current.shake()
-      );
+      setEmailValid(isEmailValidFlag);
+      setPasswordValid(isPasswordValidFlag);
+      setConfirmPasswordValid(isConfirmPasswordValidFlag);
       if (
         isEmailValidFlag &&
         isPasswordValidFlag &&
@@ -181,7 +183,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = (
                 borderBottomColor: 'rgba(0, 0, 0, 0.38)',
               }}
               ref={emailInput}
-              onSubmitEditing={() => passwordInput.current.focus()}
+              onSubmitEditing={() => passwordInput.current?.focus()}
               onChangeText={(text) => setEmail(text)}
               errorMessage={
                 isEmailValid ? '' : 'Please enter a valid email address'
@@ -212,7 +214,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = (
               placeholder={'Password'}
               ref={passwordInput}
               onSubmitEditing={() => {
-                isSignUpPage ? confirmationInput.current.focus() : login();
+                isSignUpPage ? confirmationInput.current?.focus() : login();
               }}
               onChangeText={(text) => setPassword(text)}
               errorMessage={
