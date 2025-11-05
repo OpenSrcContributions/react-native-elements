@@ -10,7 +10,9 @@
     ]
   },
   "resolutions": {
-    "form-data": "^4.0.4"
+    "form-data": "^4.0.4",
+    "lodash": "^4.17.21",
+    "lodash.template": "^4.5.0"
   },
   "scripts": {
     "build": "yarn workspaces foreach -Ap --topological-dev run build",
