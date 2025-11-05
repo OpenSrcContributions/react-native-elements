@@ -18,14 +18,14 @@ config.resolver.nodeModulesPaths = [
 
 // 3. Custom resolver to point to src instead of dist
 config.resolver.resolveRequest = (context, moduleName, platform) => {
-  // Handle @rn-vui packages - redirect to src instead of dist
+  // Handle @rneui packages - redirect to src instead of dist
   if (moduleName.startsWith('@rneui/base')) {
     const packagePath = path.resolve(workspaceRoot, 'packages/base');
     
     // Remove the package name prefix
     let subpath = moduleName.replace('@rneui/base', '').replace(/^\//, '');
     
-    // Remove 'dist/' if it's in the path (e.g., '@rn-vui/base/dist/Badge/Badge')
+    // Remove 'dist/' if it's in the path (e.g., '@rneui/base/dist/Badge/Badge')
     subpath = subpath.replace(/^dist\//, '');
     
     // Build the base path
