@@ -15,44 +15,63 @@ This app also works on the `web` platform using [React Native Web](https://githu
 1. Install [Expo CLI](https://docs.expo.io/versions/latest/workflow/expo-cli/)
 
    ```bash
-   npm install
+   [sudo] npm install -g expo-cli
    ```
 
-2. Start the app
+   _If permissions errors then please use `--unsafe-perm=true` flag too [npm/npm#16766](https://github.com/npm/npm/issues/16766)_
+
+2. Clone the project
+
+   ````bash
+   git clone https://github.com/react-native-elements/react-native-elements.git   ```
+
+   ````
+
+3. Install dependencies
 
    ```bash
-   npx expo start
+   cd react-native-elements
+
+   # Using yarn
+   yarn install
+
+   # Using npm
+   npm install
+
+   cd example
    ```
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+4. Run the cross-platform app (uses [Expo](https://expo.io/learn))
 
 ```bash
-npm run reset-project
+ # Using yarn
+ yarn start
+
+ # Using npm
+ npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Deploy Web App
 
-## Learn more
+First you must set correct `publicPath` in `app.web-build.json`. Next you must build the web app using:
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+yarn web
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Once you have built it, you can see generated `web-build` folder.
 
-## Join the community
+This folder can be hosted as static website. For example, you can publish on [Github Pages](https://pages.github.com/) via [gh-pages](https://github.com/tschaub/gh-pages) cli.
 
-Join our community of developers creating universal apps.
+```bash
+yarn deploy
+```
+
+**Note:** Don't forget to add or change "homepage" key in your package.json!
+
+### Ejecting
+
+The mobile app is built using Expo. If you would like to eject, you can run the following command:
 
 ```bash
 # Using Yarn
