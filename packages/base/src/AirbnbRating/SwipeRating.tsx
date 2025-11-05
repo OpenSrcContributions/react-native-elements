@@ -56,24 +56,6 @@ const TYPES: {
   // No TYPES entry needed - handled via conditional logic throughout the component
 };
 
-const fractionsType = (props: any, propName: string, componentName: string) => {
-  const v = props[propName];
-  if (v == null) {
-    return null;
-  }
-  if (typeof v !== 'number') {
-    return new Error(
-      `\`${propName}\` in \`${componentName}\` must be a number`
-    );
-  }
-  if (v < 0 || v > 20) {
-    return new Error(
-      `\`${propName}\` in \`${componentName}\` must be between 0 and 20`
-    );
-  }
-  return null;
-};
-
 export type SwipeRatingProps = {
   /**
    * Graphic used for represent a rating
@@ -254,7 +236,12 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
 
   useEffect(() => {
     setCurrentRating(startingValue);
-  }, [startingValue, setCurrentRating]);
+    if (fractions !== undefined && (fractions < 0 || fractions > 20)) {
+      console.error(
+        `[SwipeRating] fractions must be between 0-20, received ${fractions}`
+      );
+    }
+  }, [startingValue, setCurrentRating, fractions]);
 
   useEffect(() => {
     if (type === 'custom') {
@@ -483,10 +470,6 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
       </View>
     </View>
   );
-};
-
-SwipeRating.propTypes = {
-  fractions: fractionsType,
 };
 
 const styles = StyleSheet.create({

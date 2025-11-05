@@ -104,8 +104,5 @@
       "themed": "@rneui/themed",
       "website/docs": "Docs"
     }
-  },
-  "dependencies": {
-    "prop-types": "^15.8.1"
   }
 }
