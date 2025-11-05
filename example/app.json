@@ -14,7 +14,7 @@
     "orientation": "default",
     "primaryColor": "#cccccc",
     "icon": "./assets/icons/icon.png",
-    "scheme": "reactnativevikalpelements",
+    "scheme": "reactnativeelements",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
