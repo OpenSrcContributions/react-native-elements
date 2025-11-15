@@ -55,7 +55,7 @@ export default () => {
 
       <TabView
         onSwipeStart={console.log}
-        activeIndex={activeTabIndex}
+        value={activeTabIndex}
         onChange={setActiveTabIndex}
       >
         <TabView.Item style={{ backgroundColor: 'red', width: '100%' }}>

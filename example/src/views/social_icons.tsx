@@ -64,7 +64,7 @@ const dataList: Partial<IconData>[] = [
   },
   {
     type: 'microsoft',
-    iconType: 'material-community',
+    iconType: 'material-design',
   },
   {
     type: 'twitch',
@@ -95,7 +95,7 @@ const dataList: Partial<IconData>[] = [
   },
   {
     type: 'facebook-messenger',
-    iconType: 'material-community',
+    iconType: 'material-design',
   },
   {
     type: 'whatsapp',

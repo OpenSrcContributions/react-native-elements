@@ -3,12 +3,12 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   Image,
   ScrollView,
   Dimensions,
   StatusBar,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button } from '@rneui/themed';
 import { LinearGradient } from '../components/LinearGradient';
 
@@ -60,7 +60,7 @@ type LoginComponentProps = {};
 
 const LoginScreen1: React.FunctionComponent<LoginComponentProps> = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView edges={['top', 'left', 'right', 'bottom']} style={{ flex: 1 }}>
       <StatusBar barStyle="light-content" />
       <View style={{ flex: 1, backgroundColor: 'rgba(47,44,60,1)' }}>
         <View style={styles.statusBar} />
