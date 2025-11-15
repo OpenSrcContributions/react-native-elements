@@ -193,7 +193,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = (
               leftIcon={
                 <Icon
                   name="lock"
-                  type="simple-line-icon"
+                  type="@react-native-vector-icons/simple-line-icons"
                   color="rgba(0, 0, 0, 0.38)"
                   size={25}
                   style={{ backgroundColor: 'transparent' }}
@@ -226,7 +226,7 @@ const LoginScreen3: React.FunctionComponent<LoginScreen3State> = (
                 leftIcon={
                   <Icon
                     name="lock"
-                    type="simple-line-icon"
+                    type="@react-native-vector-icons/simple-line-icons"
                     color="rgba(0, 0, 0, 0.38)"
                     size={25}
                     style={{ backgroundColor: 'transparent' }}

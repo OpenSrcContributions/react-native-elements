@@ -117,7 +117,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
             rightIcon={
               <Icon
                 name="chevron-right"
-                type="entypo"
+                type="@react-native-vector-icons/entypo"
                 color="#86939e"
                 size={25}
               />
@@ -193,7 +193,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 leftIcon={
                   <Icon
                     name="email-outline"
-                    type="material-community"
+                    type="material-design"
                     color="black"
                     size={25}
                   />
@@ -235,7 +235,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 leftIcon={
                   <Icon
                     name="lock"
-                    type="simple-line-icon"
+                    type="@react-native-vector-icons/simple-line-icons"
                     color="black"
                     size={25}
                   />
@@ -302,7 +302,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 leftIcon={
                   <Icon
                     name="user"
-                    type="simple-line-icon"
+                    type="@react-native-vector-icons/simple-line-icons"
                     style={{ marginLeft: 12 }}
                     color="rgba(110, 120, 170, 1)"
                     size={25}
@@ -323,7 +323,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 leftIcon={
                   <Icon
                     name="email-outline"
-                    type="material-community"
+                    type="material-design"
                     style={{ marginLeft: 10 }}
                     color="rgba(110, 120, 170, 1)"
                     size={25}
@@ -345,7 +345,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 leftIcon={
                   <Icon
                     name="lock"
-                    type="simple-line-icon"
+                    type="@react-native-vector-icons/simple-line-icons"
                     style={{ marginLeft: 10 }}
                     color="rgba(110, 120, 170, 1)"
                     size={25}
@@ -368,7 +368,7 @@ const Inputs: React.FunctionComponent<InputsComponentProps> = () => {
                 leftIcon={
                   <Icon
                     name="lock"
-                    type="simple-line-icon"
+                    type="@react-native-vector-icons/simple-line-icons"
                     style={{ marginLeft: 10 }}
                     color="rgba(110, 120, 170, 1)"
                     size={25}

@@ -84,7 +84,7 @@ const sections: SettingsData[] = [
         title: 'Control Center',
         backgroundColor: GREY,
         icon: 'switch',
-        type: 'entypo',
+        type: '@react-native-vector-icons/entypo',
       },
       {
         title: 'Do Not Disturb',
