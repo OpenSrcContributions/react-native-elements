@@ -13,13 +13,15 @@ import {
   ImageSourcePropType,
   TextInput,
   TextInputProps,
+  Platform,
 } from 'react-native';
 import { Input, Button, Icon, InputProps } from '@rneui/themed';
 import { LinearGradient } from '../../components/LinearGradient';
 
-// Enable LayoutAnimation on Android
-UIManager.setLayoutAnimationEnabledExperimental &&
-  UIManager.setLayoutAnimationEnabledExperimental(true);
+// Enable LayoutAnimation on Android (only needed for old architecture)
+if (Platform.OS === 'android' && !(global as any).RN_FABRIC_ENABLED) {
+  UIManager.setLayoutAnimationEnabledExperimental?.(true);
+}
 
 const USER_COOL = require('../../../assets/images/user-cool.png');
 const USER_STUDENT = require('../../../assets/images/user-student.png');
@@ -41,10 +43,10 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
   const [validUsername, setUsernameValid] = useState<boolean>(true);
   const [validConfirmationPassword, setConfirmationPasswordValid] =
     useState<boolean>(true);
-  let emailInput = useRef<InputProps>(null);
-  let passwordInput = useRef<InputProps>(null);
-  let confirmationPasswordInput = useRef<InputProps>(null);
-  let usernameInput = useRef<InputProps>(null);
+  let emailInput = useRef<any>(null);
+  let passwordInput = useRef<any>(null);
+  let confirmationPasswordInput = useRef<any>(null);
+  let usernameInput = useRef<any>(null);
 
   const signup = () => {
     LayoutAnimation.easeInEaseOut();
@@ -71,7 +73,7 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
     const usernameCheck = username.length > 0;
     LayoutAnimation.easeInEaseOut();
     setUsernameValid(usernameCheck);
-    usernameCheck || usernameInput.shake();
+    if (!usernameCheck) usernameInput.current?.shake();
     return usernameCheck;
   };
 
@@ -81,7 +83,7 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
     const emailCheck = re.test(email);
     LayoutAnimation.easeInEaseOut();
     setEmailValid(emailCheck);
-    emailCheck || emailInput.shake();
+    if (!emailCheck) emailInput.current?.shake();
     return emailCheck;
   };
 
@@ -89,7 +91,7 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
     const passwordCheck = password.length >= 8;
     LayoutAnimation.easeInEaseOut();
     setPasswordValid(passwordCheck);
-    passwordCheck || passwordInput.shake();
+    if (!passwordCheck) passwordInput.current?.shake();
     return passwordCheck;
   };
 
@@ -97,7 +99,7 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
     const confirmationPasswordCheck = password === confirmationPassword;
     LayoutAnimation.easeInEaseOut();
     setConfirmationPasswordValid(confirmationPasswordCheck);
-    confirmationPasswordCheck || confirmationPasswordInput.shake();
+    if (!confirmationPasswordCheck) confirmationPasswordInput.current?.shake();
     return confirmationPasswordCheck;
   };
 
@@ -138,7 +140,7 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
       </View>
       <View style={{ width: '80%', marginLeft: 'auto', marginRight: 'auto' }}>
         <FormInput
-          refInput={(input) => (usernameInput = input)}
+          refInput={(input) => { usernameInput.current = input; }}
           icon="user"
           value={username}
           onChangeText={(text: string) => setUsername(text)}
@@ -147,11 +149,11 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
           errorMessage={validUsername ? '' : "Your username can't be blank"}
           onSubmitEditing={() => {
             validateUsername();
-            emailInput.focus();
+            emailInput.current?.focus();
           }}
         />
         <FormInput
-          refInput={(input) => (emailInput = input)}
+          refInput={(input) => { emailInput.current = input; }}
           icon="envelope"
           value={email}
           onChangeText={(text: string) => setEmail(text)}
@@ -161,11 +163,11 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
           errorMessage={validEmail ? '' : 'Please enter a valid email address'}
           onSubmitEditing={() => {
             validateEmail();
-            passwordInput.focus();
+            passwordInput.current?.focus();
           }}
         />
         <FormInput
-          refInput={(input) => (passwordInput = input)}
+          refInput={(input) => { passwordInput.current = input; }}
           icon="lock"
           value={password}
           onChangeText={(text: string) => setPassword(text)}
@@ -177,11 +179,11 @@ const LoginScreen2: React.FunctionComponent<LoginScreen2Props> = () => {
           }
           onSubmitEditing={() => {
             validatePassword();
-            confirmationPasswordInput.focus();
+            confirmationPasswordInput.current?.focus();
           }}
         />
         <FormInput
-          refInput={(input) => (confirmationPasswordInput = input)}
+          refInput={(input) => { confirmationPasswordInput.current = input; }}
           icon="lock"
           value={confirmationPassword}
           onChangeText={(text: string) => setConfirmationPassword(text)}
@@ -280,7 +282,7 @@ export const FormInput = (props: FormInputType) => {
       ref={refInput}
       inputContainerStyle={styles.inputContainer}
       leftIcon={
-        <Icon name={icon} type={'simple-line-icon'} color="#7384B4" size={18} />
+        <Icon name={icon} type={'@react-native-vector-icons/simple-line-icons'} color="#7384B4" size={18} />
       }
       inputStyle={styles.inputStyle}
       autoFocus={false}
