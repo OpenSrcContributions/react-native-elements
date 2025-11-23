@@ -29,7 +29,7 @@
     "bootstrap"
   ],
   "scripts": {
-    "build": "yarn run -T tsc --composite false",
+    "build": "yarn run -T tsc --composite false && yarn run -T copyfiles -u 1 \"src/**/images/**\" dist",
     "test": "yarn run -T jest  --coverage",
     "test:update": "yarn run -T jest -u  --coverage",
     "test:ci": "yarn run -T jest --runInBand  --coverage",
