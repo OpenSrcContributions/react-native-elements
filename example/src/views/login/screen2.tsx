@@ -282,7 +282,7 @@ export const FormInput = (props: FormInputType) => {
       ref={refInput}
       inputContainerStyle={styles.inputContainer}
       leftIcon={
-        <Icon name={icon} type={'simple-line-icon'} color="#7384B4" size={18} />
+        <Icon name={icon} type={'@react-native-vector-icons/simple-line-icons'} color="#7384B4" size={18} />
       }
       inputStyle={styles.inputStyle}
       autoFocus={false}

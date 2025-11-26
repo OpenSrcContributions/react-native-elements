@@ -261,7 +261,7 @@ export const Button: RneFunctionComponent<ButtonProps> = ({
             styles.button,
             {
               padding: theme.spacing[size],
-              paddingHorizontal: theme.spacing[size] + 2,
+              paddingHorizontal: theme.spacing[size] + theme.spacing.xs,
               borderRadius,
               // flex direction based on iconPosition
               // if iconRight is true, default to right

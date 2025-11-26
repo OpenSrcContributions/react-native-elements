@@ -66,3 +66,15 @@ interface Colors {
 <Palette dark />
 
 ### Spacing
+
+The spacing object provides a standardized set of spacing values (margins, paddings, gaps, etc.) to maintain consistency across your UI. Instead of hardcoding numbers, use the theme spacing tokens to ensure predictable and scalable layouts.
+
+```tsx
+interface ThemeSpacing {
+  xs: number; // Extra small spacing, e.g. 2
+  sm: number; // Small spacing, e.g. 4
+  md: number; // Medium spacing, e.g. 8
+  lg: number; // Large spacing, e.g. 12
+  xl: number; // Extra large spacing, e.g. 24
+}
+```
