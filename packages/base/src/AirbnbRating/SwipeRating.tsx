@@ -210,6 +210,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   const centerX = React.useRef<number>(0);
   const [currentRatingValue, setCurrentRatingValue] =
     React.useState<number>(startingValue);
+  const safeFractions = Math.max(0, Math.min(20, fractions));
 
   const setCurrentRating = React.useCallback(
     (rating: number) => {
@@ -270,12 +271,12 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
         const diff = localValue / imageSize;
 
         currentRating = localStartingValue + diff;
-        currentRating = fractions
-          ? Number(currentRating.toFixed(fractions))
+        currentRating = safeFractions
+          ? Number(currentRating.toFixed(safeFractions))
           : Math.ceil(currentRating);
       } else {
-        currentRating = fractions
-          ? Number(localStartingValue.toFixed(fractions))
+        currentRating = safeFractions
+          ? Number(localStartingValue.toFixed(safeFractions))
           : Math.ceil(localStartingValue);
       }
       if (jumpValue > 0 && jumpValue < ratingCount) {
@@ -284,7 +285,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
         return currentRating;
       }
     },
-    [ratingCount, minValue, imageSize, jumpValue, fractions]
+    [ratingCount, minValue, imageSize, jumpValue, safeFractions]
   );
 
   useEffect(() => {
