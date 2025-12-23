@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react-native';
-import { TouchableOpacity } from 'react-native';
+import { Pressable, TouchableOpacity } from 'react-native';
 import { renderWithWrapper } from '../../../.ci/testHelper';
 import { Icon } from '../../Icon';
 import { Button } from '../index';
@@ -32,10 +32,9 @@ describe('Button Component', () => {
     const onPress = jest.fn();
     const { wrapper } = renderWithWrapper(
       <Button onPress={onPress} />,
-      'RNE_BUTTON_WRAPPER'
+      'RNE_BUTTON_PRESSABLE'
     );
-    const touchableOpacityTree = wrapper.findByType(TouchableOpacity);
-    fireEvent(touchableOpacityTree, 'press');
+    fireEvent(wrapper, 'press');
     expect(onPress).toHaveBeenCalled();
   });
 
@@ -43,10 +42,9 @@ describe('Button Component', () => {
     const onPress = jest.fn();
     const { wrapper } = renderWithWrapper(
       <Button loading onPress={onPress} />,
-      'RNE_BUTTON_WRAPPER'
+      'RNE_BUTTON_PRESSABLE'
     );
-    const touchableOpacityTree = wrapper.findByType(TouchableOpacity);
-    fireEvent(touchableOpacityTree, 'press');
+    fireEvent(wrapper, 'press');
     expect(onPress).not.toHaveBeenCalled();
   });
 
@@ -54,10 +52,9 @@ describe('Button Component', () => {
     const onPress = jest.fn();
     const { wrapper } = renderWithWrapper(
       <Button disabled onPress={onPress} />,
-      'RNE_BUTTON_WRAPPER'
+      'RNE_BUTTON_PRESSABLE'
     );
-    const touchableOpacityTree = wrapper.findByType(TouchableOpacity);
-    fireEvent(touchableOpacityTree, 'press');
+    fireEvent(wrapper, 'press');
     expect(onPress).not.toHaveBeenCalled();
   });
 

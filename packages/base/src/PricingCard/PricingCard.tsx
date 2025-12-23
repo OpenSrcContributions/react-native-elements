@@ -151,7 +151,7 @@ export const PricingCard: RneFunctionComponent<PricingCardProps> = ({
           <PricingButton
             color={color}
             onButtonPress={onButtonPress}
-            {...(button as ButtonProps)}
+            {...(button as Omit<ButtonProps, 'children'>)}
           />
         )}
       </View>
