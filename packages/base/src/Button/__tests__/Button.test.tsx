@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithWrapper } from '../../../.ci/testHelper';
 import { Icon } from '../../Icon';
 import { Button } from '../index';
 import { describe, it, expect, jest } from '@jest/globals';
+import { View } from 'react-native';
+import { Text } from '../../Text';
 
 describe('Button Component', () => {
   it('should match snapshot', () => {
@@ -55,6 +57,42 @@ describe('Button Component', () => {
     );
     fireEvent(wrapper, 'press');
     expect(onPress).not.toHaveBeenCalled();
+  });
+
+  it('should switch backgroundColor when toggling disabled state', () => {
+    // 1. Create a Wrapper component to manage the 'disabled' state
+    const BtnWrapper = () => {
+      const [isDisabled, setIsDisabled] = useState(true);
+      return (
+        <View>
+          <Button
+            title="Test"
+            disabled={isDisabled}
+            buttonStyle={{ backgroundColor: 'blue' }}
+            disabledStyle={{ backgroundColor: 'gray' }}
+          />
+          {/* A separate trigger to toggle the state */}
+          <Text testID="toggle" onPress={() => setIsDisabled(false)}>
+            Toggle Enable
+          </Text>
+        </View>
+      );
+    };
+
+    const { wrapper, getByTestId } = renderWithWrapper(
+      <BtnWrapper />,
+      'RNE_BUTTON_PRESSABLE'
+    );
+
+    // Check disabled (gray)
+    let viewComponent = wrapper.findByType(View);
+    expect(viewComponent.props.style.backgroundColor).toBe('gray');
+
+    // re-enable and verify it switches back to blue
+    const toggleText = getByTestId('toggle');
+    fireEvent.press(toggleText);
+    viewComponent = wrapper.findByType(View);
+    expect(viewComponent.props.style.backgroundColor).toBe('blue');
   });
 
   describe.each`
