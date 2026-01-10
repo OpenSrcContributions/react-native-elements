@@ -4,14 +4,12 @@ import {
   ActivityIndicator,
   ActivityIndicatorProps,
   Platform,
+  Pressable,
+  PressableProps,
   StyleProp,
   StyleSheet,
   Text,
   TextStyle,
-  TouchableNativeFeedback,
-  TouchableNativeFeedbackProps,
-  TouchableOpacity,
-  TouchableOpacityProps,
   View,
   ViewStyle,
 } from 'react-native';
@@ -19,12 +17,12 @@ import {
   color,
   defaultTheme,
   renderNode,
-  Theme,
-  StringOmit,
   RneFunctionComponent,
+  StringOmit,
+  Theme,
   ThemeSpacing,
 } from '../helpers';
-import { IconNode, Icon } from '../Icon';
+import { Icon, IconNode } from '../Icon';
 import { TextProps } from '../Text';
 
 const defaultLoadingProps = (
@@ -42,9 +40,7 @@ const positionStyle = {
   right: 'row-reverse',
 };
 
-export interface ButtonProps
-  extends TouchableOpacityProps,
-    TouchableNativeFeedbackProps {
+export interface ButtonProps extends PressableProps {
   /** Add button title. */
   title?: string | React.ReactElement<{}>;
 
@@ -170,13 +166,7 @@ export const Button: RneFunctionComponent<ButtonProps> = ({
     [loading, onPress, disabled]
   );
 
-  // Refactor to Pressable
-  const TouchableComponentInternal =
-    TouchableComponent ||
-    Platform.select({
-      android: linearGradientProps ? TouchableOpacity : TouchableNativeFeedback,
-      default: TouchableOpacity,
-    });
+  const TouchableComponentInternal = TouchableComponent || Pressable;
 
   const titleStyle: StyleProp<TextStyle> = useMemo(
     () =>
@@ -203,13 +193,22 @@ export const Button: RneFunctionComponent<ButtonProps> = ({
     ]
   );
 
-  const background =
-    Platform.OS === 'android' && Platform.Version >= 21
-      ? TouchableNativeFeedback.Ripple(
-          Color(titleStyle?.color?.toString()).alpha(0.32).rgb().string(),
-          false
-        )
-      : undefined;
+  const androidRippleStyles = useMemo(() => {
+    if (Platform.OS !== 'android' || !!linearGradientProps || disabled) {
+      return null; // Returning null instead of undefined for android_ripple to explicitly disable
+    }
+
+    try {
+      const baseColor = titleStyle?.color?.toString() || '#000000';
+      return {
+        color: Color(baseColor).alpha(0.32).rgb().string(),
+        borderless: false,
+        foreground: true,
+      };
+    } catch (e) {
+      return { color: 'rgba(0,0,0,0.1)', borderless: false, foreground: true };
+    }
+  }, [titleStyle?.color, linearGradientProps, disabled]);
 
   const loadingProps: ActivityIndicatorProps = useMemo(
     () => ({
@@ -247,12 +246,16 @@ export const Button: RneFunctionComponent<ButtonProps> = ({
     >
       <TouchableComponentInternal
         onPress={handleOnPress}
-        delayPressIn={0}
-        activeOpacity={0.3}
+        delayLongPress={0}
         accessibilityRole="button"
-        accessibilityState={accessibilityState}
+        accessibilityState={{ ...accessibilityState, disabled }}
         disabled={disabled}
-        background={background}
+        style={({ pressed }) => [
+          rest.style,
+          { opacity: pressed && !androidRippleStyles ? 0.3 : 1 },
+        ]}
+        android_ripple={androidRippleStyles}
+        testID="RNE_BUTTON_PRESSABLE"
         {...rest}
       >
         <ViewComponent

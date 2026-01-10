@@ -41,7 +41,9 @@ exports[`Button Component clear should display clear button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -49,10 +51,14 @@ exports[`Button Component clear should display clear button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -127,8 +133,10 @@ exports[`Button Component clear should display disabled clear button 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -136,10 +144,14 @@ exports[`Button Component clear should display disabled clear button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -215,7 +227,9 @@ exports[`Button Component clear should display raised clear button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -223,10 +237,14 @@ exports[`Button Component clear should display raised clear button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -301,8 +319,10 @@ exports[`Button Component lg should display disabled lg button 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -310,10 +330,14 @@ exports[`Button Component lg should display disabled lg button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -389,7 +413,9 @@ exports[`Button Component lg should display lg button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -397,10 +423,14 @@ exports[`Button Component lg should display lg button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -486,7 +516,9 @@ exports[`Button Component lg should display raised lg button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -494,10 +526,14 @@ exports[`Button Component lg should display raised lg button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -572,8 +608,10 @@ exports[`Button Component md should display disabled md button 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -581,10 +619,14 @@ exports[`Button Component md should display disabled md button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -660,7 +702,9 @@ exports[`Button Component md should display md button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -668,10 +712,14 @@ exports[`Button Component md should display md button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -757,7 +805,9 @@ exports[`Button Component md should display raised md button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -765,10 +815,14 @@ exports[`Button Component md should display raised md button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -843,8 +897,10 @@ exports[`Button Component outline should display disabled outline button 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -852,10 +908,14 @@ exports[`Button Component outline should display disabled outline button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -931,7 +991,9 @@ exports[`Button Component outline should display outline button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -939,10 +1001,14 @@ exports[`Button Component outline should display outline button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -1028,7 +1094,9 @@ exports[`Button Component outline should display raised outline button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1036,10 +1104,14 @@ exports[`Button Component outline should display raised outline button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -1114,8 +1186,10 @@ exports[`Button Component sm should display disabled sm button 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1123,10 +1197,14 @@ exports[`Button Component sm should display disabled sm button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -1212,7 +1290,9 @@ exports[`Button Component sm should display raised sm button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1220,10 +1300,14 @@ exports[`Button Component sm should display raised sm button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -1299,7 +1383,9 @@ exports[`Button Component sm should display sm button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1307,10 +1393,14 @@ exports[`Button Component sm should display sm button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -1385,8 +1475,10 @@ exports[`Button Component solid should display disabled solid button 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1394,10 +1486,14 @@ exports[`Button Component solid should display disabled solid button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -1483,7 +1579,9 @@ exports[`Button Component solid should display raised solid button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1491,10 +1589,14 @@ exports[`Button Component solid should display raised solid button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={
@@ -1570,7 +1672,9 @@ exports[`Button Component solid should display solid button 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1578,10 +1682,14 @@ exports[`Button Component solid should display solid button 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
+      testID="RNE_BUTTON_PRESSABLE"
     >
       <View
         style={

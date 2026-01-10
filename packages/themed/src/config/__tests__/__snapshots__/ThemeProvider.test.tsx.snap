@@ -39,7 +39,9 @@ exports[`ThemeProvider render ThemeProvider 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -47,9 +49,12 @@ exports[`ThemeProvider render ThemeProvider 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
       testID="xl"
     >
@@ -120,7 +125,9 @@ exports[`ThemeProvider render ThemeProvider 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -128,9 +135,12 @@ exports[`ThemeProvider render ThemeProvider 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
       testID="lg"
     >
@@ -201,19 +211,26 @@ exports[`ThemeProvider render ThemeProvider 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
+      replaceTheme={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
       testID="sm"
+      updateTheme={[Function]}
     >
       <View
         style={
@@ -282,19 +299,26 @@ exports[`ThemeProvider render ThemeProvider 1`] = `
       accessible={true}
       collapsable={false}
       focusable={true}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
+      replaceTheme={[Function]}
       style={
-        {
-          "opacity": 1,
-        }
+        [
+          undefined,
+          {
+            "opacity": 1,
+          },
+        ]
       }
       testID="md"
+      updateTheme={[Function]}
     >
       <View
         style={

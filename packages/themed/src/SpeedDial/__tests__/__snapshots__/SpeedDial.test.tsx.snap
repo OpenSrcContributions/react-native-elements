@@ -222,18 +222,26 @@ exports[`Speed Dial Component should render 1`] = `
                 accessible={true}
                 collapsable={false}
                 focusable={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                replaceTheme={[Function]}
                 style={
-                  {
-                    "opacity": 1,
-                  }
+                  [
+                    undefined,
+                    {
+                      "opacity": 1,
+                    },
+                  ]
                 }
+                testID="RNE_BUTTON_PRESSABLE"
+                updateTheme={[Function]}
               >
                 <View
                   style={
@@ -452,18 +460,26 @@ exports[`Speed Dial Component should render 1`] = `
                 accessible={true}
                 collapsable={false}
                 focusable={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                replaceTheme={[Function]}
                 style={
-                  {
-                    "opacity": 1,
-                  }
+                  [
+                    undefined,
+                    {
+                      "opacity": 1,
+                    },
+                  ]
                 }
+                testID="RNE_BUTTON_PRESSABLE"
+                updateTheme={[Function]}
               >
                 <View
                   style={
@@ -608,18 +624,26 @@ exports[`Speed Dial Component should render 1`] = `
             accessible={true}
             collapsable={false}
             focusable={true}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            replaceTheme={[Function]}
             style={
-              {
-                "opacity": 1,
-              }
+              [
+                undefined,
+                {
+                  "opacity": 1,
+                },
+              ]
             }
+            testID="RNE_BUTTON_PRESSABLE"
+            updateTheme={[Function]}
           >
             <View
               style={

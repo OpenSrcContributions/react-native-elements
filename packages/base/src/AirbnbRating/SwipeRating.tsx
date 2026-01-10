@@ -56,25 +56,6 @@ const TYPES: {
   // No TYPES entry needed - handled via conditional logic throughout the component
 };
 
-//@ts-ignore
-const fractionsType: any = (props, propName, componentName) => {
-  if (props[propName]) {
-    const value = props[propName];
-
-    if (typeof value === 'number') {
-      return value >= 0 && value <= 20
-        ? null
-        : new Error(
-            `\`${propName}\` in \`${componentName}\` must be between 0 and 20`
-          );
-    }
-
-    return new Error(
-      `\`${propName}\` in \`${componentName}\` must be a number`
-    );
-  }
-};
-
 export type SwipeRatingProps = {
   /**
    * Graphic used for represent a rating
@@ -171,7 +152,7 @@ export type SwipeRatingProps = {
    *
    * @default 0
    */
-  fractions?: typeof fractionsType;
+  fractions?: number;
 
   /**
    * The minimum value the user can select
@@ -212,7 +193,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   onStartRating = () => {},
   onSwipeRating = () => {},
   onFinishRating = () => {},
-  fractions,
+  fractions = 0,
   readonly = false,
   style,
   showRating = false,
@@ -229,6 +210,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
   const centerX = React.useRef<number>(0);
   const [currentRatingValue, setCurrentRatingValue] =
     React.useState<number>(startingValue);
+  const safeFractions = Math.max(0, Math.min(20, fractions));
 
   const setCurrentRating = React.useCallback(
     (rating: number) => {
@@ -255,7 +237,12 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
 
   useEffect(() => {
     setCurrentRating(startingValue);
-  }, [startingValue, setCurrentRating]);
+    if (fractions !== undefined && (fractions < 0 || fractions > 20)) {
+      console.error(
+        `[SwipeRating] fractions must be between 0-20, received ${fractions}`
+      );
+    }
+  }, [startingValue, setCurrentRating, fractions]);
 
   useEffect(() => {
     if (type === 'custom') {
@@ -284,12 +271,12 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
         const diff = localValue / imageSize;
 
         currentRating = localStartingValue + diff;
-        currentRating = fractions
-          ? Number(currentRating.toFixed(fractions))
+        currentRating = safeFractions
+          ? Number(currentRating.toFixed(safeFractions))
           : Math.ceil(currentRating);
       } else {
-        currentRating = fractions
-          ? Number(localStartingValue.toFixed(fractions))
+        currentRating = safeFractions
+          ? Number(localStartingValue.toFixed(safeFractions))
           : Math.ceil(localStartingValue);
       }
       if (jumpValue > 0 && jumpValue < ratingCount) {
@@ -298,7 +285,7 @@ const SwipeRating: React.FC<SwipeRatingProps> = ({
         return currentRating;
       }
     },
-    [ratingCount, minValue, imageSize, jumpValue, fractions]
+    [ratingCount, minValue, imageSize, jumpValue, safeFractions]
   );
 
   useEffect(() => {
