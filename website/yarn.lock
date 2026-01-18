@@ -3139,8 +3139,8 @@ __metadata:
   linkType: hard
 
 "@rneui/base@file:../packages/base::locator=rne-website%40workspace%3A.":
-  version: 4.0.0-rc.8
-  resolution: "@rneui/base@file:../packages/base#../packages/base::hash=b9573c&locator=rne-website%40workspace%3A."
+  version: 5.0.0
+  resolution: "@rneui/base@file:../packages/base#../packages/base::hash=431a73&locator=rne-website%40workspace%3A."
   dependencies:
     color: ^3.2.1
     deepmerge: ^4.2.2
@@ -3150,7 +3150,7 @@ __metadata:
     "@testing-library/jest-native": ^5.4.3
     "@testing-library/react-native": ^13.2.0
     react-native-safe-area-context: ">= 3.0.0"
-  checksum: f2e90dd7a24ccde5113483ed46fff91790bdb6f8303090d6c314fa6e065547eb2acd5287df5a4a03e4efbc3f8596db1033d872f6279847555ee6d3cc7d30e1cd
+  checksum: eddc0938f478e93031d03ca190701cc46d8417b547858e6ede653a6483ed6f815b91f5129a40c2518c2b3c95a59da21caa8d812c56636b5cd5da2740b53a26d8
   languageName: node
   linkType: hard
 
