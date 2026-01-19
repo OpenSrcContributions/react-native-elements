@@ -47,8 +47,13 @@ runs:
         restore-keys: |
           ${{ runner.os }}-rne-website-${{ hashFiles('website/yarn.lock') }}
 
+    - name: Activate Yarn for website
+      if: inputs.install_website == 'true'
+      run: corepack prepare yarn@3.2.4 --activate
+      shell: bash
+
     - name: Install website dependencies
       if: steps.website_cache.outputs.cache-hit != 'true' && inputs.install_website == 'true'
-      run: yarn install
+      run: yarn install --immutable
       working-directory: website
       shell: bash
