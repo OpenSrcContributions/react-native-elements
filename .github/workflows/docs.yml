@@ -23,7 +23,7 @@ jobs:
         shell: bash
 
       - name: Enable Yarn with Corepack
-        run: corepack prepare yarn@3.2.4 --activate
+        run: corepack prepare yarn@3.2.4 --activate  # Website uses Yarn 3.2.4 for Docusaurus compatibility
         shell: bash
 
       - name: Install dependencies

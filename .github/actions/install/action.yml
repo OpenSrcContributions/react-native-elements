@@ -27,9 +27,10 @@ runs:
     - name: Enable Corepack
       run: corepack enable
       shell: bash
-    - name: Enable Yarn with Corepack
-      run: corepack prepare yarn@stable --activate
-      shell: bash
+    # Commented out to allow workflows to specify their own Yarn version
+    # - name: Enable Yarn with Corepack
+    #   run: corepack prepare yarn@stable --activate
+    #   shell: bash
 
     - name: Install root dependencies
       if: steps.root_cache.outputs.cache-hit != 'true'

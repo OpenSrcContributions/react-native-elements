@@ -35,7 +35,7 @@ jobs:
         shell: bash
 
       - name: Enable Yarn with Corepack
-        run: corepack prepare yarn@stable --activate
+        run: corepack prepare yarn@4.5.2 --activate  # Root packages use Yarn 4.5.2
         shell: bash
 
       - name: Install dependencies
