@@ -23,7 +23,7 @@ jobs:
         shell: bash
 
       - name: Enable Yarn with Corepack
-        run: corepack prepare yarn@stable --activate
+        run: corepack prepare yarn@3.2.4 --activate
         shell: bash
 
       - name: Install dependencies
@@ -42,3 +42,4 @@ jobs:
           user_name: "React Native Elements CI"
           user_email: "react-native-elements-ci@users.noreply.github.com"
           cname: reactnativeelements.com
+
