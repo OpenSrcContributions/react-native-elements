@@ -54,6 +54,6 @@ runs:
 
     - name: Install website dependencies
       if: steps.website_cache.outputs.cache-hit != 'true' && inputs.install_website == 'true'
-      run: yarn install --mode=update-lockfile
+      run: yarn install --no-immutable
       working-directory: website
       shell: bash
