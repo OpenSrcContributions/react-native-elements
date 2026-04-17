@@ -49,7 +49,6 @@ usage('Disabled', '', () => (
   </Stack>
 ));
 
-// FIXED: Ensure LinearGradient is accepted as a parameter from the doc-gen wrapper
 usage(
   'Linear Gradient',
   'Requires an external library like expo-linear-gradient',
