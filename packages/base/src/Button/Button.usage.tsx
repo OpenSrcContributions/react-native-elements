@@ -54,9 +54,6 @@ usage(
   'Requires an external library like expo-linear-gradient',
   (LinearGradient) => (
     <Stack row align="center" spacing={4}>
-      {/* Example Import: 
-      import { LinearGradient } from 'expo-linear-gradient'; 
-    */}
       <Button
         title="Linear Gradient"
         ViewComponent={LinearGradient}
